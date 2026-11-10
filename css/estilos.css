@@ -1,0 +1,18 @@
+/* == Look and Feel == */
+:root {
+  --blanco-calido: #EAE4D2;
+  --arena: #F3D5B8;
+  --naranja: #F27242;
+  --terracota: #D2774A;
+  --arcilla: #99522F;
+  --tinta: #1a1a1a;
+}
+body {
+  font-family: 'Hanken Grotesk', sans-serif;
+  background-color: var(--blanco-calido);
+  color: var(--tinta);
+}
+h1, h2, h3 {
+  font-family: 'Gloock', Georgia, serif;
+  font-weight: 400;
+}
