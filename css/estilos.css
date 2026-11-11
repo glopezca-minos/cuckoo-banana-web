@@ -7,6 +7,11 @@
   --terracota: #D2774A;
   --arcilla: #99522F;
   --tinta: #1a1a1a;
+  --crema-claro: #f7f4ee;
+  --borde: #ddd7ca;
+  --texto: #302e2b;
+  --texto-suave: #66635c;
+  --gris-subtitulo: #59554f;
 }
 
 body {
@@ -25,8 +30,8 @@ h1, h2, h3 {
    ===================================== */
 
 .cb-header {
-  background-color: #f7f4ee;
-  border-bottom: 1px solid #ddd7ca;
+  background-color: var(--crema-claro);
+  border-bottom: 1px solid var(--borde);
   width: 100%;
 }
 
@@ -66,7 +71,7 @@ h1, h2, h3 {
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.85em;
-  color: #59554f;
+  color: var(--gris-subtitulo);
   line-height: 1;
   white-space: nowrap;
 }
@@ -85,18 +90,18 @@ h1, h2, h3 {
   font-family: "Hanken Grotesk", sans-serif;
   font-size: 18px;
   font-weight: 500;
-  color: #302e2b;
+  color: var(--texto);
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.2s ease;
 }
 
 .cb-navigation a:hover {
-  color: #a65d35;
+  color: var(--arcilla);
 }
 
 .cb-navigation .cb-nav-highlight {
-  color: #a65d35;
+  color: var(--arcilla);
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 6px;
@@ -114,7 +119,7 @@ h1, h2, h3 {
   font-family: "Hanken Grotesk", sans-serif;
   font-size: 18px;
   font-weight: 600;
-  color: #302e2b;
+  color: var(--texto);
   text-decoration: none;
 }
 
@@ -125,7 +130,7 @@ h1, h2, h3 {
 }
 
 .cb-cart:hover {
-  color: #a65d35;
+  color: var(--arcilla);
 }
 
 /* =====================================
@@ -244,7 +249,7 @@ h1, h2, h3 {
   font-size: 10px;
   font-weight: 300;
   letter-spacing: 0.85em;
-  color: #59554f;
+  color: var(--gris-subtitulo);
   white-space: nowrap;
   margin-top: 8px;
 }
@@ -256,7 +261,7 @@ h1, h2, h3 {
   font-size: 17px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #302e2b;
+  color: var(--texto);
 }
 
 .cb-footer-column p,
@@ -266,7 +271,7 @@ h1, h2, h3 {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
-  color: #66635c;
+  color: var(--texto-suave);
   margin-bottom: 14px;
   text-decoration: none;
 }
@@ -281,7 +286,7 @@ h1, h2, h3 {
   max-width: 1720px;
   margin: 60px auto 0;
   padding-top: 25px;
-  border-top: 1px solid #ded9cc;
+  border-top: 1px solid var(--borde);
 
   display: flex;
   align-items: center;
@@ -290,7 +295,7 @@ h1, h2, h3 {
 
   font-family: "Hanken Grotesk", sans-serif;
   font-size: 13px;
-  color: #66635c;
+  color: var(--texto-suave);
 }
 
 .cb-footer-bottom a {
@@ -306,6 +311,12 @@ h1, h2, h3 {
   margin: 0;
 }
 
+/* Íconos del footer */
+.cb-footer-column a .bi {
+  font-size: 18px;
+  margin-right: 8px;
+  vertical-align: -2px;
+}
 /* =====================================
    Footer responsive
    ===================================== */
