@@ -212,8 +212,9 @@ h1, h2, h3 {
   max-width: 1720px;
   margin: 0 auto;
 
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+ display: grid;
+  grid-template-columns: auto auto auto auto;   
+  justify-content: space-between;              
   gap: 55px;
   align-items: start;
 }
@@ -266,7 +267,10 @@ h1, h2, h3 {
 
 .cb-footer-column p,
 .cb-footer-column a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 28px;
   font-family: "Hanken Grotesk", sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -314,8 +318,6 @@ h1, h2, h3 {
 /* Íconos del footer */
 .cb-footer-column a .bi {
   font-size: 18px;
-  margin-right: 8px;
-  vertical-align: -2px;
 }
 /* =====================================
    Footer responsive
