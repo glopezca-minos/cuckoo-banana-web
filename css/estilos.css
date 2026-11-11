@@ -1,3 +1,4 @@
+
 /* == Look and Feel == */
 :root {
   --blanco-calido: #EAE4D2;
@@ -7,12 +8,360 @@
   --arcilla: #99522F;
   --tinta: #1a1a1a;
 }
+
 body {
   font-family: 'Hanken Grotesk', sans-serif;
   background-color: var(--blanco-calido);
   color: var(--tinta);
 }
+
 h1, h2, h3 {
   font-family: 'Gloock', Georgia, serif;
   font-weight: 400;
+}
+
+/* =====================================
+   Encabezado Cuckoo Banana
+   ===================================== */
+
+.cb-header {
+  background-color: #f7f4ee;
+  border-bottom: 1px solid #ddd7ca;
+  width: 100%;
+}
+
+.cb-header-container {
+  max-width: 1800px;
+  height: 118px;
+  margin: 0 auto;
+  padding: 0 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+/* Logo */
+
+.cb-header-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.cb-header-logo img {
+  display: block;
+  width: 360px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.cb-logo-subtitle {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.85em;
+  color: #59554f;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Navegacion */
+
+.cb-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+  flex: 1;
+}
+
+.cb-navigation a {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #302e2b;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.cb-navigation a:hover {
+  color: #a65d35;
+}
+
+.cb-navigation .cb-nav-highlight {
+  color: #a65d35;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* Carrito */
+
+.cb-cart {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #302e2b;
+  text-decoration: none;
+}
+
+.cb-cart svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 1.4;
+}
+
+.cb-cart:hover {
+  color: #a65d35;
+}
+
+/* =====================================
+   Responsive
+   ===================================== */
+
+/* Adaptacion para tablet */
+
+@media (max-width: 1200px) {
+  .cb-header-container {
+    height: auto;
+    padding: 24px 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .cb-navigation {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .cb-header-logo img {
+    width: 300px;
+  }
+}
+
+/* Adaptacion para celular */
+
+@media (max-width: 700px) {
+  .cb-header-container {
+    padding: 20px;
+  }
+
+  .cb-header-logo img {
+    width: 240px;
+    margin-bottom: 6px;
+  }
+
+  .cb-logo-subtitle {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+  }
+
+  .cb-navigation {
+    gap: 16px;
+  }
+
+  .cb-navigation a,
+  .cb-cart {
+    font-size: 15px;
+  }
+
+  .cb-cart svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* =====================================
+   Pie de pagina
+   ===================================== */
+
+/* Espacio temporal Inicio */
+
+.cb-main {
+  min-height: 45vh;
+}
+
+/* Footer */
+
+.cb-footer {
+  background-color: var(--blanco-calido);
+  padding: 70px 5% 30px;
+  color: var(--tinta);
+}
+
+.cb-footer-container {
+  max-width: 1720px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 55px;
+  align-items: start;
+}
+
+/* Logo con ave integrada */
+
+.cb-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 0;
+  min-width: 0;
+}
+
+.cb-footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 1;
+  width: 430px;
+  max-width: 100%;
+}
+
+.cb-footer-logo img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.cb-footer-subtitle {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.85em;
+  color: #59554f;
+  white-space: nowrap;
+  margin-top: 8px;
+}
+
+/* Columnas */
+
+.cb-footer-column h3 {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #302e2b;
+}
+
+.cb-footer-column p,
+.cb-footer-column a {
+  display: block;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #66635c;
+  margin-bottom: 14px;
+  text-decoration: none;
+}
+
+.cb-footer-column a:hover {
+  color: var(--arcilla);
+}
+
+/* Parte inferior */
+
+.cb-footer-bottom {
+  max-width: 1720px;
+  margin: 60px auto 0;
+  padding-top: 25px;
+  border-top: 1px solid #ded9cc;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 13px;
+  color: #66635c;
+}
+
+.cb-footer-bottom a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cb-footer-bottom a:hover {
+  color: var(--arcilla);
+}
+
+.cb-footer-bottom p {
+  margin: 0;
+}
+
+/* =====================================
+   Footer responsive
+   ===================================== */
+
+/* Tablet */
+
+@media (max-width: 1250px) {
+  .cb-footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px;
+  }
+
+  .cb-footer-logo {
+    width: 350px;
+  }
+}
+
+/* Celular */
+
+@media (max-width: 700px) {
+  .cb-footer {
+    padding: 45px 25px 25px;
+  }
+
+  .cb-footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cb-footer-brand {
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+
+  .cb-footer-logo {
+    width: 290px;
+  }
+
+  .cb-footer-subtitle {
+    font-size: 8px;
+    letter-spacing: 0.7em;
+  }
+
+  .cb-footer-column h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+
+  .cb-footer-column p,
+  .cb-footer-column a {
+    font-size: 15px;
+  }
+
+  .cb-footer-bottom {
+    margin-top: 40px;
+    gap: 10px;
+    font-size: 12px;
+  }
 }

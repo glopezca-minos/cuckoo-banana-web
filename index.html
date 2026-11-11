@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,17 +7,118 @@
   <title>Cuckoo Banana | ARTE EN VIDRIO</title>
 
   <!-- bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- tipografia -->
-<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- estilos-->
-<link href="css/estilos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- estilos -->
+  <link href="css/estilos.css" rel="stylesheet">
 </head>
+
 <body>
 
-  <h1>Cuckoo Banana</h1>
-  <p>Sitio en construcción.</p>
+<!-- =====================================
+     Encabezado Cuckoo Banana
+     ===================================== -->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<header class="cb-header">
+  <div class="cb-header-container">
+
+    <!-- Logo -->
+    <a href="index.html" class="cb-header-logo">
+      <img src="img/logo.svg" alt="Cuckoo Banana">
+      <span class="cb-logo-subtitle">ARTE EN VIDRIO</span>
+    </a>
+
+    <!-- Menu principal -->
+    <nav class="cb-navigation" aria-label="Navegación principal">
+      <a href="tienda.html" class="cb-nav-highlight">Tienda</a>
+      <a href="personalizados.html">Personalizados</a>
+      <a href="talleres.html">Talleres</a>
+      <a href="sobre-nosotras.html">Sobre nosotras</a>
+      <a href="ayuda.html">Ayuda</a>
+    </nav>
+
+    <!-- Carrito -->
+    <a href="carrito.html" class="cb-cart">
+      <svg width="27" height="27" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor"
+           stroke-width="1.5" stroke-linecap="round"
+           stroke-linejoin="round" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2
+                 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6">
+        </path>
+      </svg>
+      <span>Carrito (<span id="cart-count">0</span>)</span>
+    </a>
+
+  </div>
+</header>
+
+<!-- =====================================
+     Contenido principal
+     ===================================== -->
+
+<main class="cb-main">
+</main>
+
+<!-- =====================================
+     Footer Cuckoo Banana
+     ===================================== -->
+
+<footer class="cb-footer">
+
+  <div class="cb-footer-container">
+
+    <!-- Logo con ave integrada -->
+    <div class="cb-footer-brand">
+      <div class="cb-footer-logo">
+        <img src="img/logoave.svg" alt="Cuckoo Banana">
+        <span class="cb-footer-subtitle">ARTE EN VIDRIO</span>
+      </div>
+    </div>
+
+    <!-- Contacto -->
+    <div class="cb-footer-column">
+      <h3>Contacto</h3>
+      <p>WhatsApp: 506 7129 1718</p>
+      <p>Taller en las montañas de Heredia</p>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="cb-footer-column">
+      <h3>Redes</h3>
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Facebook</a>
+    </div>
+
+    <!-- Ayuda -->
+    <div class="cb-footer-column">
+      <h3>Ayuda</h3>
+      <a href="ayuda.html">Envíos y preguntas frecuentes</a>
+      <a href="ayuda.html">Lista de espera</a>
+      <a href="personalizados.html">Pedidos personalizados</a>
+    </div>
+
+  </div>
+
+  <!-- Enlaces -->
+  <div class="cb-footer-bottom">
+    <a href="privacidad.html">Aviso de privacidad</a>
+    <span>-</span>
+    <a href="terminos.html">Políticas de reserva y cambios</a>
+    <span>-</span>
+    <p>© 2026 Cuckoo Banana</p>
+  </div>
+
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
