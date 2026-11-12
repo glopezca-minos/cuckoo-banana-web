@@ -21,11 +21,93 @@
   <!-- header -->
   <div id="header"></div>
 
-  <!-- ===== Contenido de página ===== -->
-  <main class="cb-main">
+  <!-- ===== Contenido ===== -->
+  <main class="cb-main cb-tienda">
+
+    <section class="cb-tienda-intro">
+      <nav class="cb-migas" aria-label="Ruta">
+        <a href="index.html">Inicio</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Tienda</span>
+      </nav>
+      <h1>Tienda</h1>
+      <p>Cada vitral es una pieza única hecha a mano.</p>
+    </section>
+
+    <div class="cb-segmentos" role="group" aria-label="Disponibilidad">
+      <button class="cb-segmento activo" data-disponibilidad="todas">Todas</button>
+      <button class="cb-segmento" data-disponibilidad="disponible">Entrega inmediata</button>
+      <button class="cb-segmento" data-disponibilidad="lista-espera">Lista de espera</button>
+    </div>
+
+    <div class="cb-tienda-layout">
+
+      <aside class="cb-tienda-filtros" id="panel-filtros">
+        <fieldset class="cb-categorias">
+          <legend>Categoría</legend>
+          <label class="cb-check"><input type="checkbox" value="insectos"> Insectos</label>
+          <label class="cb-check"><input type="checkbox" value="pajaritos"> Pajaritos</label>
+          <label class="cb-check"><input type="checkbox" value="mascotas"> Mascotas</label>
+          <label class="cb-check"><input type="checkbox" value="corazon"> Corazón</label>
+          <label class="cb-check"><input type="checkbox" value="flores-y-frutas"> Flores y frutas</label>
+          <label class="cb-check"><input type="checkbox" value="bohemios"> Bohemios</label>
+          <label class="cb-check"><input type="checkbox" value="navidenos"> Navideños</label>
+          <label class="cb-check"><input type="checkbox" value="pinturas-en-madera"> Pinturas en madera</label>
+        </fieldset>
+
+        <div class="cb-filtros-ayuda">
+          <p>¿No encuentras lo que buscas?</p>
+          <a href="personalizados.html" class="cb-link-flecha">Pedido personalizado →</a>
+        </div>
+      </aside>
+
+    <section class="cb-tienda-productos" aria-label="Productos">
+             
+    <!-- filtrar, contador y ordenar -->
+        <div class="cb-barra-productos">
+          <button class="cb-btn-filtrar" type="button"
+                  aria-controls="panel-filtros" aria-expanded="false">
+            <i class="bi bi-filter" aria-hidden="true"></i> Filtrar
+          </button>
+
+          <span class="cb-contador-piezas" id="contador-piezas">12 piezas</span>
+
+          <label for="ordenar" class="visually-hidden">Ordenar</label>
+          <select id="ordenar" class="cb-select">
+            <option value="recientes">Más recientes</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
+          </select>
+        </div>
+
+    <!-- Cuadrícula de tarjetas -->
+        <div class="cb-grid-productos" id="grid-productos">
+
+          <article class="cb-tarjeta">
+            <a href="producto.html?id=1" class="cb-tarjeta-foto">
+              <div class="cb-foto-placeholder">Foto de la pieza a contraluz</div>
+            </a>
+
+            <div class="cb-tarjeta-info">
+              <h2 class="cb-tarjeta-nombre">Vitral colibrí</h2>
+              <p class="cb-tarjeta-precio">₡18.000</p>
+              <p class="cb-tarjeta-desc">Vidrio de colores hecho a mano. Cada pieza es única.</p>
+              <span class="cb-estado cb-estado-disponible">Disponible</span>
+
+              <div class="cb-tarjeta-botones">
+                <a href="producto.html?id=1" class="cb-btn cb-btn-borde">Ver detalles</a>
+                <button class="cb-btn cb-btn-principal" type="button">
+                  <i class="bi bi-cart3" aria-hidden="true"></i> Agregar al carrito
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
 
 
-
+   
+    </section>
 
   </main>
 
