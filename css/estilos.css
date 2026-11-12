@@ -822,3 +822,56 @@ h1, h2, h3 {
     display: none;
   }
 }
+/* Boton flotante de WhatsApp */
+
+.cb-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--arcilla);
+  color: #ffffff;
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 1000;
+
+  transition: background-color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.cb-whatsapp svg {
+  width: 34px;
+  height: 34px;
+}
+
+.cb-whatsapp:hover {
+  background-color: #7e4025;
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.cb-whatsapp:focus-visible {
+  outline: 3px solid var(--naranja);
+  outline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+  .cb-whatsapp {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .cb-whatsapp svg {
+    width: 29px;
+    height: 29px;
+  }
+}
