@@ -19,6 +19,32 @@
 
   <!-- Estilos de Inicio -->
   <link href="css/inicio.css" rel="stylesheet">
+
+  <!-- Ajustes para las fotografias -->
+  <style>
+    .cb-home-hero-image .cb-home-photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .cb-home-products .cb-tarjeta-foto {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cb-home-products .cb-tarjeta-foto .cb-home-photo {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -69,14 +95,15 @@
 
         </div>
 
-        <!-- Imagen principal temporal -->
+        <!-- Imagen principal -->
         <div class="cb-home-hero-image">
 
-          <div class="cb-foto-placeholder"
-               role="img"
-               aria-label="Espacio para fotografía de un vitral colibrí">
-            Pieza destacada: vitral colibrí a contraluz
-          </div>
+          <img
+            src="img/hero-colibri.jpeg"
+            alt="Vitral de ave de colores sostenido a contraluz"
+            class="cb-home-photo"
+            fetchpriority="high"
+          >
 
         </div>
 
@@ -153,199 +180,331 @@
     </section>
 
 
-<!-- Disponibles ahora -->
-<section class="cb-home-products">
-  <div class="cb-home-container">
+    <!-- DISPONIBLES AHORA -->
+    <section class="cb-home-products">
 
-    <div class="cb-home-products-heading">
-      <h2 class="cb-home-section-title">Disponibles ahora</h2>
-      <a href="tienda.html" class="cb-home-text-link">
-        Ver toda la tienda &rarr;
-      </a>
-    </div>
+      <div class="cb-home-container">
 
-    <div class="cb-grid-productos cb-home-products-grid">
+        <div class="cb-home-products-heading">
 
-      <!-- Vitral colibrí -->
-      <article class="cb-tarjeta">
-        <div class="cb-tarjeta-foto">
-          <div class="cb-foto-placeholder">
-            Foto de la pieza a contraluz
-          </div>
+          <h2 class="cb-home-section-title">
+            Disponibles ahora
+          </h2>
+
+          <a href="tienda.html" class="cb-home-text-link">
+            Ver toda la tienda &rarr;
+          </a>
+
         </div>
 
-        <div class="cb-tarjeta-info">
-          <h3 class="cb-tarjeta-nombre">Vitral colibrí</h3>
-          <p class="cb-tarjeta-precio">₡18.000</p>
-          <p class="cb-tarjeta-desc">
-            Vidrio de colores hecho a mano. Cada pieza es única.
-          </p>
-          <span class="cb-estado cb-estado-disponible">Disponible</span>
+        <div class="cb-grid-productos cb-home-products-grid">
 
-          <div class="cb-tarjeta-botones">
-            <a href="tienda.html" class="cb-btn cb-btn-borde">
-              Ver detalles
-            </a>
-            <button type="button" class="cb-btn cb-btn-principal"
-                    data-producto="colibri">
-              <i class="bi bi-cart3" aria-hidden="true"></i>
-              Agregar al carrito
-            </button>
-          </div>
+
+          <!-- Vitral colibri -->
+          <article class="cb-tarjeta">
+
+            <div class="cb-tarjeta-foto">
+
+              <img
+                src="img/vitral-colibri-amarillo.jpeg"
+                alt="Vitral de colibrí con alas verdes y cuerpo amarillo"
+                class="cb-home-photo"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="cb-tarjeta-info">
+
+              <h3 class="cb-tarjeta-nombre">
+                Vitral colibrí
+              </h3>
+
+              <p class="cb-tarjeta-precio">
+                ₡18.000
+              </p>
+
+              <p class="cb-tarjeta-desc">
+                Vidrio de colores hecho a mano. Cada pieza es única.
+              </p>
+
+              <span class="cb-estado cb-estado-disponible">
+                Disponible
+              </span>
+
+              <div class="cb-tarjeta-botones">
+
+                <a href="tienda.html" class="cb-btn cb-btn-borde">
+                  Ver detalles
+                </a>
+
+                <button
+                  type="button"
+                  class="cb-btn cb-btn-principal"
+                  data-producto="colibri"
+                >
+                  <i class="bi bi-cart3" aria-hidden="true"></i>
+                  Agregar al carrito
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- Vitral lapa -->
+          <article class="cb-tarjeta">
+
+            <div class="cb-tarjeta-foto">
+
+              <img
+                src="img/vitral-lapa.jpeg"
+                alt="Vitral de lapa roja con alas amarillas y azules"
+                class="cb-home-photo"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="cb-tarjeta-info">
+
+              <h3 class="cb-tarjeta-nombre">
+                Vitral lapa
+              </h3>
+
+              <p class="cb-tarjeta-precio">
+                ₡22.500
+              </p>
+
+              <p class="cb-tarjeta-desc">
+                Vidrio de colores hecho a mano. Cada pieza es única.
+              </p>
+
+              <span class="cb-estado cb-estado-disponible">
+                Disponible
+              </span>
+
+              <div class="cb-tarjeta-botones">
+
+                <a href="tienda.html" class="cb-btn cb-btn-borde">
+                  Ver detalles
+                </a>
+
+                <button
+                  type="button"
+                  class="cb-btn cb-btn-principal"
+                  data-producto="lapa"
+                >
+                  <i class="bi bi-cart3" aria-hidden="true"></i>
+                  Agregar al carrito
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- Orquidea -->
+          <article class="cb-tarjeta">
+
+            <div class="cb-tarjeta-foto">
+
+              <img
+                src="img/vitral-orquidea.jpeg"
+                alt="Vitral de flor con pétalos claros, centro rojo y hojas verdes"
+                class="cb-home-photo"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="cb-tarjeta-info">
+
+              <h3 class="cb-tarjeta-nombre">
+                Orquídea
+              </h3>
+
+              <p class="cb-tarjeta-precio">
+                ₡15.000
+              </p>
+
+              <p class="cb-tarjeta-desc">
+                Vidrio de colores hecho a mano. Cada pieza es única.
+              </p>
+
+              <span class="cb-estado cb-estado-disponible">
+                Disponible
+              </span>
+
+              <div class="cb-tarjeta-botones">
+
+                <a href="tienda.html" class="cb-btn cb-btn-borde">
+                  Ver detalles
+                </a>
+
+                <button
+                  type="button"
+                  class="cb-btn cb-btn-principal"
+                  data-producto="orquidea"
+                >
+                  <i class="bi bi-cart3" aria-hidden="true"></i>
+                  Agregar al carrito
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- Vitral buho -->
+          <article class="cb-tarjeta">
+
+            <div class="cb-tarjeta-foto">
+
+              <img
+                src="img/vitral-buho.jpeg"
+                alt="Vitral artesanal de búho"
+                class="cb-home-photo"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="cb-tarjeta-info">
+
+              <h3 class="cb-tarjeta-nombre">
+                Vitral búho
+              </h3>
+
+              <p class="cb-tarjeta-precio">
+                ₡28.000
+              </p>
+
+              <p class="cb-tarjeta-desc">
+                Vidrio de colores hecho a mano. Cada pieza es única.
+              </p>
+
+              <span class="cb-estado cb-estado-disponible">
+                Disponible
+              </span>
+
+              <div class="cb-tarjeta-botones">
+
+                <a href="tienda.html" class="cb-btn cb-btn-borde">
+                  Ver detalles
+                </a>
+
+                <button
+                  type="button"
+                  class="cb-btn cb-btn-principal"
+                  data-producto="buho"
+                >
+                  <i class="bi bi-cart3" aria-hidden="true"></i>
+                  Agregar al carrito
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
         </div>
-      </article>
 
-      <!-- Vitral lapa -->
-      <article class="cb-tarjeta">
-        <div class="cb-tarjeta-foto">
-          <div class="cb-foto-placeholder">
-            Foto de la pieza a contraluz
-          </div>
-        </div>
-
-        <div class="cb-tarjeta-info">
-          <h3 class="cb-tarjeta-nombre">Vitral lapa</h3>
-          <p class="cb-tarjeta-precio">₡22.500</p>
-          <p class="cb-tarjeta-desc">
-            Vidrio de colores hecho a mano. Cada pieza es única.
-          </p>
-          <span class="cb-estado cb-estado-disponible">Disponible</span>
-
-          <div class="cb-tarjeta-botones">
-            <a href="tienda.html" class="cb-btn cb-btn-borde">
-              Ver detalles
-            </a>
-            <button type="button" class="cb-btn cb-btn-principal"
-                    data-producto="lapa">
-              <i class="bi bi-cart3" aria-hidden="true"></i>
-              Agregar al carrito
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Orquídea -->
-      <article class="cb-tarjeta">
-        <div class="cb-tarjeta-foto">
-          <div class="cb-foto-placeholder">
-            Foto de la pieza a contraluz
-          </div>
-        </div>
-
-        <div class="cb-tarjeta-info">
-          <h3 class="cb-tarjeta-nombre">Orquídea</h3>
-          <p class="cb-tarjeta-precio">₡15.000</p>
-          <p class="cb-tarjeta-desc">
-            Vidrio de colores hecho a mano. Cada pieza es única.
-          </p>
-          <span class="cb-estado cb-estado-disponible">Disponible</span>
-
-          <div class="cb-tarjeta-botones">
-            <a href="tienda.html" class="cb-btn cb-btn-borde">
-              Ver detalles
-            </a>
-            <button type="button" class="cb-btn cb-btn-principal"
-                    data-producto="orquidea">
-              <i class="bi bi-cart3" aria-hidden="true"></i>
-              Agregar al carrito
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Vitral búho -->
-      <article class="cb-tarjeta">
-        <div class="cb-tarjeta-foto">
-          <div class="cb-foto-placeholder">
-            Foto de la pieza a contraluz
-          </div>
-        </div>
-
-        <div class="cb-tarjeta-info">
-          <h3 class="cb-tarjeta-nombre">Vitral búho</h3>
-          <p class="cb-tarjeta-precio">₡28.000</p>
-          <p class="cb-tarjeta-desc">
-            Vidrio de colores hecho a mano. Cada pieza es única.
-          </p>
-          <span class="cb-estado cb-estado-disponible">Disponible</span>
-
-          <div class="cb-tarjeta-botones">
-            <a href="tienda.html" class="cb-btn cb-btn-borde">
-              Ver detalles
-            </a>
-            <button type="button" class="cb-btn cb-btn-principal"
-                    data-producto="buho">
-              <i class="bi bi-cart3" aria-hidden="true"></i>
-              Agregar al carrito
-            </button>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- Talleres y clases -->
-<section class="cb-home-workshops">
-  <div class="cb-home-container cb-home-feature-grid">
-
-    <div class="cb-home-feature-image">
-      <div class="cb-foto-placeholder"
-           role="img"
-           aria-label="Espacio para fotografía del taller">
-        Foto o video del taller
       </div>
-    </div>
 
-    <div class="cb-home-feature-content">
-      <p class="cb-home-eyebrow">TALLERES Y CLASES</p>
-
-      <h2>Aprende a hacer tu propio vitral</h2>
-
-      <p class="cb-home-feature-description">
-        Información, fechas y cupos de los talleres y clases.
-      </p>
-
-      <a href="talleres.html" class="cb-home-btn cb-home-btn-outline">
-        Ver talleres
-      </a>
-    </div>
-
-  </div>
-</section>
+    </section>
 
 
-<!-- Sobre nosotras -->
-<section class="cb-home-about">
-  <div class="cb-home-container cb-home-feature-grid">
+    <!-- TALLERES Y CLASES -->
+    <section class="cb-home-workshops">
 
-    <div class="cb-home-feature-image">
-      <div class="cb-foto-placeholder"
-           role="img"
-           aria-label="Espacio para fotografía de Sandra en el taller">
-        Sandra en el taller
+      <div class="cb-home-container cb-home-feature-grid">
+
+        <div class="cb-home-feature-image">
+
+          <div
+            class="cb-foto-placeholder"
+            role="img"
+            aria-label="Espacio para fotografía del taller"
+          >
+            Foto o video del taller
+          </div>
+
+        </div>
+
+        <div class="cb-home-feature-content">
+
+          <p class="cb-home-eyebrow">
+            TALLERES Y CLASES
+          </p>
+
+          <h2>
+            Aprende a hacer tu propio vitral
+          </h2>
+
+          <p class="cb-home-feature-description">
+            Información, fechas y cupos de los talleres y clases.
+          </p>
+
+          <a href="talleres.html" class="cb-home-btn cb-home-btn-outline">
+            Ver talleres
+          </a>
+
+        </div>
+
       </div>
-    </div>
 
-    <div class="cb-home-feature-content">
-      <p class="cb-home-eyebrow">SOBRE NOSOTRAS</p>
+    </section>
 
-      <h2>Más de 25 años haciendo vitrales</h2>
 
-      <p class="cb-home-feature-description">
-        Sandra diseña y elabora cada pieza; Amanda atiende
-        las ventas y el contenido digital.
-      </p>
+    <!-- SOBRE NOSOTRAS -->
+    <section class="cb-home-about">
 
-      <a href="sobre-nosotras.html" class="cb-home-text-link">
-        Conoce nuestra historia &rarr;
-      </a>
-    </div>
+      <div class="cb-home-container cb-home-feature-grid">
 
-  </div>
-</section>
+        <div class="cb-home-feature-image">
+
+          <div
+            class="cb-foto-placeholder"
+            role="img"
+            aria-label="Espacio para fotografía de Sandra en el taller"
+          >
+            Sandra en el taller
+          </div>
+
+        </div>
+
+        <div class="cb-home-feature-content">
+
+          <p class="cb-home-eyebrow">
+            SOBRE NOSOTRAS
+          </p>
+
+          <h2>
+            Más de 25 años haciendo vitrales
+          </h2>
+
+          <p class="cb-home-feature-description">
+            Sandra diseña y elabora cada pieza; Amanda atiende
+            las ventas y el contenido digital.
+          </p>
+
+          <a href="sobre-nosotras.html" class="cb-home-text-link">
+            Conoce nuestra historia &rarr;
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
 
   </main>
 
@@ -358,4 +517,3 @@
 
 </body>
 </html>
-x
