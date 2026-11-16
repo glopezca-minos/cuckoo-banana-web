@@ -1,0 +1,688 @@
+
+/* - Ficha de producto Cuckoo Banana - */
+
+.cb-ficha {
+  min-height: 65vh;
+  background-color: var(--crema-claro, #f7f4ee);
+  color: var(--tinta, #1a1a1a);
+  padding: 45px 0 85px;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+.cb-ficha-container {
+  width: calc(100% - 140px);
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+/* Navegación */
+
+.cb-ficha-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  font-size: 14px;
+  margin-bottom: 35px;
+  color: #66635c;
+}
+
+.cb-ficha-breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cb-ficha-breadcrumb a:hover {
+  color: var(--arcilla, #99522f);
+}
+
+.cb-ficha-breadcrumb [aria-current="page"] {
+  color: #302e2b;
+  font-weight: 600;
+}
+
+/* Distribución principal */
+
+.cb-ficha-principal {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 65px;
+  align-items: start;
+}
+
+.cb-ficha-galeria,
+.cb-ficha-informacion {
+  min-width: 0;
+}
+
+/* Imagen principal */
+
+.cb-ficha-imagen-principal {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.04;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: #eee7d6;
+}
+
+.cb-ficha-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+
+  background: repeating-linear-gradient(
+    135deg,
+    #f5f1e7 0,
+    #f5f1e7 13px,
+    #eae4d2 13px,
+    #eae4d2 26px
+  );
+
+  color: #b6ad98;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.cb-ficha-imagen-principal img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Miniaturas */
+
+.cb-ficha-miniaturas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.cb-ficha-miniatura {
+  position: relative;
+  aspect-ratio: 1.25 / 1;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  background: repeating-linear-gradient(
+    135deg,
+    #f5f1e7 0,
+    #f5f1e7 10px,
+    #eae4d2 10px,
+    #eae4d2 20px
+  );
+  color: #b6ad98;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.cb-ficha-miniatura span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 8px;
+  text-align: center;
+}
+
+.cb-ficha-miniatura img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cb-ficha-miniatura:hover {
+  border-color: var(--arcilla, #99522f);
+}
+
+.cb-ficha-miniatura.activa {
+  border-color: #302e2b;
+  box-shadow: 0 0 0 1px #302e2b;
+}
+
+/* Información */
+
+.cb-ficha-estado {
+  display: inline-block;
+  padding: 6px 11px;
+  border-radius: 3px;
+  background-color: var(--arcilla, #99522f);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.cb-ficha-estado.espera {
+  background-color: var(--arena, #f3d5b8);
+  color: var(--arcilla, #99522f);
+}
+
+.cb-ficha-informacion h1 {
+  font-family: "Gloock", Georgia, serif;
+  font-size: clamp(38px, 3.5vw, 57px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  margin: 0 0 18px;
+  font-weight: 400;
+  color: #302e2b;
+}
+
+.cb-ficha-precio {
+  font-size: 27px;
+  font-weight: 600;
+  margin: 0 0 17px;
+}
+
+.cb-ficha-entrega {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  margin-bottom: 23px;
+}
+
+.cb-ficha-entrega i {
+  font-size: 17px;
+}
+
+.cb-ficha-datos {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 23px;
+  font-size: 15px;
+}
+
+.cb-ficha-datos div {
+  display: grid;
+  grid-template-columns: 105px 1fr;
+  gap: 15px;
+}
+
+.cb-ficha-datos dt {
+  font-weight: 400;
+  color: #66635c;
+}
+
+.cb-ficha-datos dd {
+  margin: 0;
+}
+
+.cb-ficha-descripcion {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #66635c;
+  margin-bottom: 20px;
+}
+
+.cb-ficha-aviso {
+  background-color: var(--arena, #f3d5b8);
+  padding: 17px 19px;
+  border-radius: 7px;
+  font-size: 14px;
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.cb-ficha-aviso strong {
+  font-weight: 700;
+}
+
+/* Botones */
+
+.cb-ficha-boton {
+  min-height: 53px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.cb-ficha-boton-principal {
+  background-color: var(--naranja, #f27242);
+  border: 1px solid var(--naranja, #f27242);
+  color: #ffffff;
+}
+
+.cb-ficha-boton-principal:hover {
+  background-color: #a4421c;
+  border-color: #a4421c;
+  color: #ffffff;
+}
+
+.cb-ficha-boton:focus-visible,
+.cb-ficha-miniatura:focus-visible,
+.cb-ficha-relacionado-boton:focus-visible {
+  outline: 3px solid var(--arcilla, #99522f);
+  outline-offset: 3px;
+}
+
+.cb-ficha-feedback {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #99522f;
+}
+
+.cb-ficha-feedback:empty {
+  display: none;
+}
+
+.cb-ficha-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--arcilla, #99522f);
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 20px;
+  text-underline-offset: 4px;
+}
+
+.cb-ficha-whatsapp:hover {
+  color: #a4421c;
+}
+
+/* - Piezas similares - */
+
+.cb-ficha-relacionados {
+  margin-top: 85px;
+}
+
+.cb-ficha-relacionados h2 {
+  font-family: "Gloock", Georgia, serif;
+  font-size: clamp(32px, 3vw, 43px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  margin-bottom: 27px;
+}
+
+.cb-ficha-relacionados-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.cb-ficha-relacionado {
+  display: grid;
+  grid-template-columns: 43% minmax(0, 1fr);
+  gap: 18px;
+  min-height: 315px;
+  background: #fffdfa;
+  padding: 15px;
+  border-radius: 16px;
+  box-shadow: 0 5px 16px rgba(45, 39, 28, 0.08);
+}
+
+.cb-ficha-relacionado-foto {
+  position: relative;
+  min-height: 285px;
+  overflow: hidden;
+  border-radius: 11px;
+  background: repeating-linear-gradient(
+    135deg,
+    #f5f1e7 0,
+    #f5f1e7 12px,
+    #eae4d2 12px,
+    #eae4d2 24px
+  );
+}
+
+.cb-ficha-relacionado-foto span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: #b6ad98;
+  text-align: center;
+  font: 12px monospace;
+}
+
+.cb-ficha-relacionado-foto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cb-ficha-relacionado-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cb-ficha-relacionado-info h3 {
+  font-family: "Gloock", Georgia, serif;
+  font-size: clamp(25px, 2.15vw, 32px);
+  line-height: 1.18;
+  font-weight: 400;
+  margin: 3px 0 12px;
+  color: #302e2b;
+}
+
+.cb-ficha-relacionado-precio {
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+
+.cb-ficha-relacionado-descripcion {
+  font-size: 14px;
+  color: #66635c;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.cb-ficha-relacionado-estado {
+  align-self: flex-start;
+  background: var(--arcilla, #99522f);
+  color: white;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 9px;
+}
+
+.cb-ficha-relacionado-estado.espera {
+  background: var(--arena, #f3d5b8);
+  color: var(--arcilla, #99522f);
+}
+
+.cb-ficha-relacionado-acciones {
+  display: grid;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.cb-ficha-relacionado-boton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--naranja, #f27242);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--arcilla, #99522f);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cb-ficha-relacionado-boton:hover {
+  background: var(--arena, #f3d5b8);
+  color: var(--arcilla, #99522f);
+}
+
+.cb-ficha-relacionado-boton.principal {
+  background: var(--naranja, #f27242);
+  color: white;
+}
+
+.cb-ficha-relacionado-boton.principal:hover {
+  background: #a4421c;
+  border-color: #a4421c;
+}
+
+.cb-ficha-relacionado-mensaje {
+  font-size: 12px;
+  color: var(--arcilla, #99522f);
+  line-height: 1.4;
+}
+
+.cb-ficha-relacionado-mensaje:empty {
+  display: none;
+}
+
+/* - Ventana de lista de espera - */
+
+.cb-ficha-modal {
+  width: min(500px, calc(100% - 28px));
+  max-height: 90vh;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background-color: #f7f4ee;
+  color: #302e2b;
+  box-shadow: 0 20px 65px rgba(0, 0, 0, 0.2);
+}
+
+.cb-ficha-modal::backdrop {
+  background: rgba(18, 16, 13, 0.6);
+}
+
+.cb-ficha-modal-contenido {
+  position: relative;
+  padding: 37px;
+}
+
+.cb-ficha-modal-cerrar {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: transparent;
+  border: 0;
+  color: #302e2b;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cb-ficha-modal-etiqueta {
+  font-size: 12px;
+  letter-spacing: 0.17em;
+  font-weight: 700;
+  color: var(--arcilla, #99522f);
+  margin-bottom: 12px;
+}
+
+.cb-ficha-modal h2 {
+  font-family: "Gloock", Georgia, serif;
+  font-size: 38px;
+  font-weight: 400;
+  margin: 0 0 15px;
+}
+
+.cb-ficha-modal-descripcion {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #66635c;
+  margin-bottom: 20px;
+}
+
+.cb-ficha-modal-producto {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px;
+  background: #eae4d2;
+  border-radius: 6px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.cb-ficha-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.cb-ficha-modal label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.cb-ficha-modal input,
+.cb-ficha-modal select,
+.cb-ficha-modal textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #d6cdbb;
+  background: #fffdfa;
+  border-radius: 5px;
+  color: #302e2b;
+  font: 15px "Hanken Grotesk", sans-serif;
+}
+
+.cb-ficha-modal input:focus,
+.cb-ficha-modal select:focus,
+.cb-ficha-modal textarea:focus {
+  outline: 2px solid var(--arcilla, #99522f);
+  outline-offset: 1px;
+}
+
+.cb-ficha-modal-nota {
+  font-size: 13px;
+  color: #66635c;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.cb-ficha [hidden],
+.cb-ficha-modal [hidden] {
+  display: none !important;
+}
+
+/* - Responsive - */
+
+@media (max-width: 1100px) {
+  .cb-ficha-container {
+    width: calc(100% - 80px);
+  }
+
+  .cb-ficha-principal {
+    gap: 35px;
+  }
+
+  .cb-ficha-relacionado {
+    grid-template-columns: 40% minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .cb-ficha-relacionado-info h3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 800px) {
+  .cb-ficha-principal {
+    grid-template-columns: 1fr;
+  }
+
+  .cb-ficha-galeria {
+    max-width: 650px;
+  }
+
+  .cb-ficha-relacionados-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .cb-ficha {
+    padding: 25px 0 55px;
+  }
+
+  .cb-ficha-container {
+    width: calc(100% - 36px);
+  }
+
+  .cb-ficha-breadcrumb {
+    margin-bottom: 22px;
+    font-size: 12px;
+  }
+
+  .cb-ficha-principal {
+    gap: 28px;
+  }
+
+  .cb-ficha-miniaturas {
+    gap: 7px;
+  }
+
+  .cb-ficha-miniatura {
+    font-size: 9px;
+  }
+
+  .cb-ficha-informacion h1 {
+    font-size: 38px;
+  }
+
+  .cb-ficha-precio {
+    font-size: 24px;
+  }
+
+  .cb-ficha-relacionados {
+    margin-top: 58px;
+  }
+
+  .cb-ficha-relacionados h2 {
+    font-size: 32px;
+  }
+
+  .cb-ficha-relacionado {
+    grid-template-columns: 39% minmax(0, 1fr);
+    gap: 12px;
+    padding: 10px;
+    min-height: 260px;
+  }
+
+  .cb-ficha-relacionado-foto {
+    min-height: 240px;
+  }
+
+  .cb-ficha-relacionado-info h3 {
+    font-size: 21px;
+  }
+
+  .cb-ficha-relacionado-precio {
+    font-size: 17px;
+  }
+
+  .cb-ficha-relacionado-descripcion {
+    font-size: 12px;
+  }
+
+  .cb-ficha-relacionado-boton {
+    font-size: 12px;
+    padding: 7px 5px;
+  }
+
+  .cb-ficha-modal-contenido {
+    padding: 28px 22px;
+  }
+
+  .cb-ficha-modal h2 {
+    font-size: 32px;
+  }
+}
