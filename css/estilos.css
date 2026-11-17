@@ -641,6 +641,7 @@ h1, h2, h3 {
   aspect-ratio: 3 / 4;
   border-radius: 8px;
   overflow: hidden;
+  text-decoration: none;
 }
 
 /* PLACEHOLDER DE FOTOS */
