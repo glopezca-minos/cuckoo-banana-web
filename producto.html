@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vitral colibrí | Cuckoo Banana</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link href="css/estilos.css" rel="stylesheet">
+  <link href="css/producto.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Header global -->
+  <div id="header"></div>
+
+  <main class="cb-ficha">
+
+    <div class="cb-ficha-container">
+
+      <!-- Navegación -->
+      <nav class="cb-ficha-breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a>
+        <span>›</span>
+        <a href="tienda.html">Tienda</a>
+        <span>›</span>
+        <span id="ficha-breadcrumb-nombre" aria-current="page">
+          Vitral colibrí
+        </span>
+      </nav>
+
+      <!-- Ficha principal -->
+      <section class="cb-ficha-principal">
+
+        <!-- Galería -->
+        <div class="cb-ficha-galeria">
+
+          <div class="cb-ficha-imagen-principal">
+
+            <div class="cb-ficha-placeholder"
+                 id="ficha-placeholder-principal">
+              Foto principal de la pieza a contraluz
+            </div>
+
+            <img id="ficha-imagen-principal"
+                 alt=""
+                 hidden>
+
+          </div>
+
+          <!-- Miniaturas generadas por JavaScript -->
+          <div class="cb-ficha-miniaturas"
+               id="ficha-miniaturas"
+               aria-label="Galería de fotografías del producto">
+          </div>
+
+        </div>
+
+        <!-- Información del producto -->
+        <div class="cb-ficha-informacion">
+
+          <span class="cb-ficha-estado"
+                id="ficha-estado">
+            Disponible
+          </span>
+
+          <h1 id="ficha-nombre">
+            Vitral colibrí
+          </h1>
+
+          <p class="cb-ficha-precio"
+             id="ficha-precio">
+            ₡18.000
+          </p>
+
+          <p class="cb-ficha-entrega">
+            <i class="bi bi-clock" aria-hidden="true"></i>
+            <span id="ficha-entrega">
+              Entrega en 2 a 4 días
+            </span>
+          </p>
+
+          <dl class="cb-ficha-datos">
+
+            <div>
+              <dt>Medidas</dt>
+              <dd id="ficha-medidas">Por confirmar</dd>
+            </div>
+
+            <div>
+              <dt>Categoría</dt>
+              <dd id="ficha-categoria">Aves</dd>
+            </div>
+
+            <div>
+              <dt>Envío</dt>
+              <dd>Correos de Costa Rica</dd>
+            </div>
+
+          </dl>
+
+          <p class="cb-ficha-descripcion"
+             id="ficha-descripcion">
+            Colibrí en vidrio de colores, elaborado a mano
+            en el taller de Heredia.
+          </p>
+
+          <div class="cb-ficha-aviso">
+            <strong>Pieza artesanal: cada vitral es único.</strong>
+            El color, el vidrio y la textura pueden variar
+            respecto a la fotografía.
+          </div>
+
+          <!-- Compra -->
+          <button type="button"
+                  class="cb-ficha-boton cb-ficha-boton-principal"
+                  id="ficha-agregar-carrito">
+
+            <i class="bi bi-cart3" aria-hidden="true"></i>
+            Agregar al carrito
+
+          </button>
+
+          <!-- Lista de espera -->
+          <button type="button"
+                  class="cb-ficha-boton cb-ficha-boton-principal"
+                  id="ficha-unirme-lista"
+                  hidden>
+
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            Unirme a la lista de espera
+
+          </button>
+
+          <p class="cb-ficha-feedback"
+             id="ficha-feedback"
+             role="status"
+             aria-live="polite">
+          </p>
+
+          <a href="https://wa.me/50671291718"
+             class="cb-ficha-whatsapp"
+             target="_blank"
+             rel="noopener noreferrer"
+             id="ficha-whatsapp">
+
+            <i class="bi bi-whatsapp" aria-hidden="true"></i>
+            Consultar por WhatsApp
+            <span aria-hidden="true">→</span>
+
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- Productos relacionados -->
+      <section class="cb-ficha-relacionados">
+
+        <h2>Piezas similares</h2>
+
+        <div class="cb-ficha-relacionados-grid"
+             id="ficha-relacionados-grid">
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- Ventana de lista de espera -->
+  <dialog class="cb-ficha-modal"
+          id="ficha-modal-lista"
+          aria-labelledby="ficha-modal-titulo">
+
+    <div class="cb-ficha-modal-contenido">
+
+      <button type="button"
+              class="cb-ficha-modal-cerrar"
+              id="ficha-modal-cerrar"
+              aria-label="Cerrar ventana">
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
+      </button>
+
+      <p class="cb-ficha-modal-etiqueta">
+        CUCKOO BANANA
+      </p>
+
+      <h2 id="ficha-modal-titulo">
+        Lista de espera
+      </h2>
+
+      <p class="cb-ficha-modal-descripcion">
+        Nuestras piezas se elaboran a mano y algunas
+        tienen una lista de espera de 2 a 5 meses.
+        Completá estos datos para preparar tu solicitud.
+      </p>
+
+      <div class="cb-ficha-modal-producto">
+        <strong id="ficha-modal-producto-nombre">
+          Vitral tucán
+        </strong>
+        <span id="ficha-modal-producto-precio">
+          ₡22.500
+        </span>
+      </div>
+
+      <form id="ficha-form-lista">
+
+        <label for="ficha-cliente-nombre">
+          Nombre completo
+        </label>
+
+        <input type="text"
+               id="ficha-cliente-nombre"
+               name="nombre"
+               autocomplete="name"
+               required>
+
+        <label for="ficha-cliente-cantidad">
+          Cantidad de piezas
+        </label>
+
+        <select id="ficha-cliente-cantidad"
+                name="cantidad"
+                required>
+          <option value="1">1 pieza</option>
+          <option value="2">2 piezas</option>
+          <option value="3">3 piezas</option>
+          <option value="4">4 piezas</option>
+        </select>
+
+        <label for="ficha-cliente-comentarios">
+          Comentarios (opcional)
+        </label>
+
+        <textarea id="ficha-cliente-comentarios"
+                  name="comentarios"
+                  rows="3"
+                  placeholder="Colores, dudas o detalles de tu pedido"></textarea>
+
+        <p class="cb-ficha-modal-nota">
+          Al continuar, se abrirá WhatsApp con tu solicitud y se confirmará tu lugar en la lista de espera.
+        </p>
+
+        <button type="submit"
+                class="cb-ficha-boton cb-ficha-boton-principal">
+          Continuar por WhatsApp
+          <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </button>
+
+      </form>
+
+    </div>
+
+  </dialog>
+
+
+  <!-- Footer global -->
+  <div id="footer"></div>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/producto.js"></script>
+
+</body>
+</html>
