@@ -43,7 +43,7 @@
       categoria: "Aves",
       descripcion:
         "Lapa en vidrio de colores, elaborada a mano en el taller de Heredia.",
-      imagen: "img/vitral-lapa.jpeg",
+      imagen: "img/vitral-lapa.jpg",
       alt: "Vitral artesanal de lapa"
     },
 
