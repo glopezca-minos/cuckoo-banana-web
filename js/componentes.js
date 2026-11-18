@@ -119,7 +119,6 @@ const headerSimpleHTML = `
 `;
 
 /* ===== 3. Insertar header y footer en la página ===== */
-// Si la página tiene <div id="header" data-simple>, se usa el header solo con logo
 const contenedorHeader = document.getElementById('header');
 contenedorHeader.outerHTML = contenedorHeader.hasAttribute('data-simple') ? headerSimpleHTML : headerHTML;
 document.getElementById('footer').outerHTML = footerHTML;

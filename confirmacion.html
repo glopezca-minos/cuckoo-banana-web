@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido recibido | Cuckoo Banana</title>
+
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- tipografia -->
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- estilos -->
+  <link href="css/estilos.css" rel="stylesheet">
+  <link href="css/confirmacion.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- header -->
+  <div id="header"></div>
+
+  <!-- ===== Contenido ===== -->
+  <main class="cb-main cb-confirmacion">
+
+    <div class="cb-confirmacion-layout">
+
+      <!-- ===== Columna izquierda ===== -->
+      <section class="cb-confirmacion-principal">
+
+        <div class="cb-check-circulo" aria-hidden="true">
+          <i class="bi bi-check-lg"></i>
+        </div>
+
+        <h1>¡Tu pedido fue recibido!</h1>
+
+        <p class="cb-codigo-etiqueta">Código de pedido</p>
+        <div class="cb-codigo">
+          <span id="codigo-pedido">CB-0000</span>
+          <button class="cb-btn-copiar" type="button" id="boton-copiar">
+            <i class="bi bi-copy" aria-hidden="true"></i> <span>Copiar</span>
+          </button>
+        </div>
+
+        <p class="cb-aviso-24h">
+          <i class="bi bi-clock" aria-hidden="true"></i>
+          Tus piezas están reservadas por 24 horas
+        </p>
+
+        <!-- Pasos para pagar -->
+        <ol class="cb-pasos-pago">
+          <li>
+            <span class="cb-paso-numero">1</span>
+            <span>Haz el SINPE al <strong id="numero-sinpe">71291718</strong> por <strong id="paso-total">₡0</strong></span>
+          </li>
+          <li>
+            <span class="cb-paso-numero">2</span>
+            <span>Escribe el código <strong id="paso-codigo">CB-0000</strong> en la descripción</span>
+          </li>
+          <li>
+            <span class="cb-paso-numero">3</span>
+            <span>Envíanos el comprobante por WhatsApp</span>
+          </li>
+        </ol>
+
+        <a href="#" class="cb-btn cb-btn-principal cb-btn-whatsapp" id="boton-whatsapp" target="_blank" rel="noopener">
+          <i class="bi bi-whatsapp" aria-hidden="true"></i> Enviar pedido por WhatsApp
+        </a>
+
+      </section>
+
+      <!-- ===== Columna derecha: resumen ===== -->
+      <aside class="cb-resumen-pedido" aria-label="Resumen del pedido">
+        <h2>Resumen del pedido</h2>
+
+        <!-- Las piezas las crea js/confirmacion.js -->
+        <ul class="cb-mini-lista" id="mini-lista"></ul>
+
+        <div class="cb-resumen-fila">
+          <span>Subtotal</span>
+          <span id="conf-subtotal">₡0</span>
+        </div>
+        <div class="cb-resumen-fila">
+          <span id="conf-envio-etiqueta">Envío</span>
+          <span id="conf-envio">₡0</span>
+        </div>
+        <div class="cb-resumen-fila cb-resumen-total">
+          <span>Total</span>
+          <span id="conf-total">₡0</span>
+        </div>
+
+        <p class="cb-envio-a" id="envio-a"></p>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- footer -->
+  <div id="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/confirmacion.js"></script>
+</body>
+</html>
