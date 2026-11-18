@@ -111,7 +111,6 @@ document.getElementById('header').outerHTML = headerHTML;
 document.getElementById('footer').outerHTML = footerHTML;
 
 /* ===== 4. Marcar en el menú la página actual ===== */
-// Ej.: en ".../tienda.html" (o ".../tienda") la página actual es "tienda"
 const paginaActual = (location.pathname.split('/').pop() || 'index').replace('.html', '');
 
 document.querySelectorAll('.cb-navigation a').forEach(enlace => {

@@ -1,0 +1,120 @@
+/* =====================================================
+   Catálogo
+   Tienda, el Inicio, Ficha de producto. 
+   estado: "disponible" | "lista-espera" | "reservada" | "vendida"
+   ===================================================== */
+
+const catalogo = [
+  {
+    id: "colibri",
+    nombre: "Vitral colibrí",
+    categoria: "pajaritos",
+    precio: 18000,
+    estado: "disponible",
+    medidas: "Por confirmar",
+    descripcion: "Colibrí en vidrio de colores, elaborado a mano en el taller de Heredia.",
+    imagen: "img/vitral-colibri-verde.jpeg",
+    alt: "Vitral artesanal de colibrí verde a contraluz"
+  },
+  {
+    id: "tucan",
+    nombre: "Vitral tucán",
+    categoria: "pajaritos",
+    precio: 22500,
+    estado: "lista-espera",
+    medidas: "Por confirmar",
+    descripcion: "Tucán elaborado a mano con diferentes colores y texturas de vidrio.",
+    imagen: "img/vitral-tucan.jpeg",
+    alt: "Vitral artesanal de tucán"
+  },
+  {
+    id: "lapa",
+    nombre: "Vitral lapa",
+    categoria: "pajaritos",
+    precio: 22500,
+    estado: "disponible",
+    medidas: "Por confirmar",
+    descripcion: "Lapa en vidrio de colores, elaborada a mano en el taller de Heredia.",
+    imagen: "img/vitral-lapa.jpeg",
+    alt: "Vitral artesanal de lapa"
+  },
+  {
+    id: "buho",
+    nombre: "Vitral búho",
+    categoria: "pajaritos",
+    precio: 28000,
+    estado: "disponible",
+    medidas: "Por confirmar",
+    descripcion: "Búho de vidrio de colores, elaborado a mano. Cada pieza es única.",
+    imagen: "img/vitral-buho.jpeg",
+    alt: "Vitral artesanal de búho"
+  },
+  {
+    id: "orquidea",
+    nombre: "Orquídea",
+    categoria: "flores-y-frutas",
+    precio: 15000,
+    estado: "disponible",
+    medidas: "Por confirmar",
+    descripcion: "Pieza floral de vidrio de colores, hecha a mano en Heredia.",
+    imagen: "img/vitral-orquidea.jpeg",
+    alt: "Vitral artesanal de flor"
+  },
+
+  /* ===== Piezas de prueba (sin foto todavía) ===== */
+  {
+    id: "mariposa",
+    nombre: "Mariposa morpho",
+    categoria: "insectos",
+    precio: 28000,
+    estado: "reservada",
+    medidas: "Por confirmar",
+    descripcion: "Vidrio de colores hecho a mano. Cada pieza es única.",
+    imagen: "",
+    alt: ""
+  },
+  {
+    id: "banano",
+    nombre: "Racimo de banano",
+    categoria: "flores-y-frutas",
+    precio: 15000,
+    estado: "vendida",
+    medidas: "Por confirmar",
+    descripcion: "Vidrio de colores hecho a mano. Cada pieza es única.",
+    imagen: "",
+    alt: ""
+  },
+  {
+    id: "corazon-rojo",
+    nombre: "Corazón rojo",
+    categoria: "corazon",
+    precio: 12000,
+    estado: "disponible",
+    medidas: "Por confirmar",
+    descripcion: "Vidrio de colores hecho a mano. Cada pieza es única.",
+    imagen: "",
+    alt: ""
+  },
+  {
+    id: "gatito",
+    nombre: "Gatito",
+    categoria: "mascotas",
+    precio: 20000,
+    estado: "lista-espera",
+    medidas: "Por confirmar",
+    descripcion: "Vidrio de colores hecho a mano. Cada pieza es única.",
+    imagen: "",
+    alt: ""
+  },
+  {
+    id: "estrella",
+    nombre: "Estrella navideña",
+    categoria: "navidenos",
+    precio: 10000,
+    estado: "disponible",
+    medidas: "Por confirmar",
+    descripcion: "Vidrio de colores hecho a mano. Cada pieza es única.",
+    imagen: "",
+    alt: ""
+  }
+];

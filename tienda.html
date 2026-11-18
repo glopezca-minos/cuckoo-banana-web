@@ -17,6 +17,7 @@
 
   <!-- estilos -->
   <link href="css/estilos.css" rel="stylesheet">
+  <link href="css/tienda.css" rel="stylesheet">
 </head>
 
 <body>
@@ -45,6 +46,12 @@
     <div class="cb-tienda-layout">
 
       <aside class="cb-tienda-filtros" id="panel-filtros">
+        <div class="cb-panel-cabecera">
+          <h2>Filtrar</h2>
+          <button class="cb-panel-cerrar" type="button" id="cerrar-filtros" aria-label="Cerrar filtros">
+            <i class="bi bi-x-lg" aria-hidden="true"></i>
+          </button>
+        </div>
         <fieldset class="cb-categorias">
           <legend>Categoría</legend>
           <label class="cb-check"><input type="checkbox" value="insectos"> Insectos</label>
@@ -61,6 +68,7 @@
           <p>¿No encuentras lo que buscas?</p>
           <a href="personalizados.html" class="cb-link-flecha">Pedido personalizado →</a>
         </div>
+        <button class="cb-btn cb-btn-principal cb-ver-resultados" type="button" id="ver-resultados">Ver piezas</button>
       </aside>
 
       <section class="cb-tienda-productos" aria-label="Productos">
@@ -81,30 +89,22 @@
           </select>
         </div>
 
-        <!-- Cuadrícula de tarjetas -->
-        <div class="cb-grid-productos" id="grid-productos">
-
-          <article class="cb-tarjeta">
-            <a href="producto.html?id=1" class="cb-tarjeta-foto">
-              <div class="cb-foto-placeholder">PLACEHOLDER FOTO</div>
-            </a>
-
-            <div class="cb-tarjeta-info">
-              <h2 class="cb-tarjeta-nombre">Vitral colibrí</h2>
-              <p class="cb-tarjeta-precio">₡18.000</p>
-              <p class="cb-tarjeta-desc">Vidrio de colores hecho a mano. Cada pieza es única.</p>
-              <span class="cb-estado cb-estado-disponible">Disponible</span>
-
-              <div class="cb-tarjeta-botones">
-                <a href="producto.html?id=1" class="cb-btn cb-btn-borde">Ver detalles</a>
-                <button class="cb-btn cb-btn-principal" type="button">
-                  <i class="bi bi-cart3" aria-hidden="true"></i> Agregar al carrito
-                </button>
-              </div>
-            </div>
-          </article>
-
+        <!-- Cuadrícula de tarjetas se crean con tienda.js -->
+        <div class="cb-grid-productos" id="grid-productos"></div>
+                
+            <!-- no se cumplen los filtros -->
+              <p class="cb-mensaje-vacio" id="mensaje-vacio" hidden>
+              No hay piezas con estos filtros.
+              <a href="personalizados.html">¿Te gustaría pedir un vitral personalizado?</a>
+              </p>
+            <!-- Cargar más -->
+              <div class="cb-cargar-mas" id="cargar-mas">
+              <p id="texto-mostrando">Mostrando 8 de 10 piezas</p>
+              <button class="cb-btn cb-btn-borde cb-btn-cargar" type="button" id="boton-cargar-mas">
+               Cargar más piezas
+              </button>
         </div>
+
       </section>
     </div>
 
@@ -115,6 +115,9 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/componentes.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/tienda.js"></script>
 
 </body>
 
