@@ -1,0 +1,290 @@
+/* =====================================
+   Carrito
+   Solo para carrito.html
+   ===================================== */
+
+.cb-carrito {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 32px 40px 96px;
+}
+
+.cb-carrito h1 {
+  font-size: clamp(40px, 5vw, 64px);
+  margin-bottom: 28px;
+}
+
+/* Migas (igual que en la Tienda) */
+
+.cb-migas {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--texto-suave);
+  margin-bottom: 32px;
+}
+
+.cb-migas a {
+  color: var(--texto-suave);
+  text-decoration: none;
+}
+
+.cb-migas a:hover { color: var(--arcilla); }
+
+.cb-migas [aria-current="page"] { color: var(--texto); }
+
+/* Dos columnas: piezas | resumen */
+
+.cb-carrito-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 64px;
+  align-items: start;
+}
+
+#carrito-lleno[hidden] { display: none; }
+
+/* ===== Lista de piezas ===== */
+
+.cb-carrito-lista {
+  border-top: 1px solid var(--borde);
+}
+
+.cb-item {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;   /* foto | info | precio */
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.cb-item-foto {
+  display: block;
+  aspect-ratio: 6 / 7;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.cb-item-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cb-item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.cb-item-nombre {
+  font-size: 28px;
+  margin: 0;
+}
+
+.cb-item-nombre a {
+  color: var(--tinta);
+  text-decoration: none;
+}
+
+.cb-item-nombre a:hover { color: var(--arcilla); }
+
+.cb-item-info .cb-estado { margin: 0; }
+
+.cb-item-detalle {
+  font-size: 15px;
+  color: var(--texto-suave);
+  margin: 0;
+}
+
+.cb-item-eliminar {
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 14px;
+  color: var(--arcilla);
+  cursor: pointer;
+}
+
+.cb-item-eliminar:hover { text-decoration: underline; }
+
+.cb-item-precio {
+  font-size: 17px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cb-link-flecha {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--arcilla);
+  text-underline-offset: 4px;
+}
+
+.cb-seguir {
+  display: inline-block;
+  margin-top: 32px;
+}
+
+/* ===== Resumen ===== */
+
+.cb-resumen {
+  position: sticky;            /* se queda visible al bajar en desktop */
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px;
+  background-color: #fdfbf7;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+}
+
+.cb-resumen h2 {
+  font-size: 34px;
+  margin: 0;
+}
+
+.cb-resumen-fila {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 16px;
+}
+
+.cb-resumen-envio { font-size: 14px; }
+
+.cb-resumen-total {
+  padding-top: 22px;
+  border-top: 1px solid var(--borde);
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.cb-resumen-boton { padding: 13px 16px; }
+
+.cb-resumen-nota {
+  font-size: 12px;
+  color: var(--texto-suave);
+  margin: 0;
+}
+
+/* Barra de celular: oculta en desktop */
+.cb-barra-movil { display: none; }
+
+/* ===== Carrito vacío ===== */
+
+.cb-carrito-vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 80px 24px 120px;
+  text-align: center;
+}
+
+.cb-carrito-vacio[hidden] { display: none; }
+
+.cb-vacio-icono {
+  display: grid;
+  place-items: center;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background-color: var(--blanco-calido);
+  font-size: 40px;
+  color: var(--arcilla);
+}
+
+.cb-carrito-vacio h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  margin: 8px 0 0;
+}
+
+.cb-carrito-vacio p {
+  font-size: 17px;
+  color: var(--texto-suave);
+  margin: 0;
+}
+
+.cb-carrito-vacio .cb-btn {
+  width: auto;
+  padding: 14px 36px;
+}
+
+/* ===== Tablet ===== */
+
+@media (max-width: 1000px) {
+  .cb-carrito-layout {
+    grid-template-columns: 1fr;   /* el resumen pasa debajo */
+    gap: 32px;
+  }
+
+  .cb-resumen { position: static; }
+}
+
+/* ===== Celular ===== */
+
+@media (max-width: 700px) {
+  .cb-carrito {
+    padding: 24px 16px 0;
+  }
+
+  .cb-migas { display: none; }
+
+  .cb-carrito h1 { margin-bottom: 16px; }
+
+  .cb-item {
+    grid-template-columns: 90px 1fr auto;
+    gap: 14px;
+    padding: 16px 0;
+  }
+
+  .cb-item-nombre { font-size: 20px; }
+
+  .cb-item-info { gap: 8px; }
+
+  .cb-seguir { margin-top: 24px; }
+
+  .cb-resumen h2 { font-size: 30px; }
+
+  /* El botón del resumen se cambia por la barra de abajo */
+  .cb-resumen-boton { display: none; }
+
+  .cb-barra-movil {
+    position: sticky;            /* se queda pegada abajo al hacer scroll */
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin: 24px -16px 0;        /* ocupa todo el ancho de la pantalla */
+    padding: 12px 16px;
+    background-color: #fdfbf7;
+    border-top: 1px solid var(--borde);
+  }
+
+  .cb-barra-etiqueta {
+    display: block;
+    font-size: 12px;
+    color: var(--texto-suave);
+  }
+
+  .cb-barra-movil strong { font-size: 18px; }
+
+  .cb-barra-movil .cb-btn {
+    width: auto;
+    padding: 12px 20px;
+  }
+
+  .cb-carrito-vacio { padding: 48px 8px 64px; }
+
+  .cb-vacio-icono {
+    width: 96px;
+    height: 96px;
+    font-size: 30px;
+  }
+}

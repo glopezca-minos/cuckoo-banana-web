@@ -5,11 +5,6 @@
 const grid = document.getElementById('grid-productos');
 const contadorPiezas = document.getElementById('contador-piezas');
 
-// 18000 → "₡18.000"
-function formatoPrecio(numero) {
-  return '₡' + numero.toLocaleString('de-DE');
-}
-
 // Texto de la etiqueta según el estado
 const textoEstado = {
   'disponible': 'Disponible',

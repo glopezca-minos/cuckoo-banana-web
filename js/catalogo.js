@@ -118,3 +118,8 @@ const catalogo = [
     alt: ""
   }
 ];
+
+// 18000 → "₡18.000"
+function formatoPrecio(numero) {
+  return '₡' + numero.toLocaleString('de-DE');
+}
