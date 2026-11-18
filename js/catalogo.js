@@ -4,7 +4,7 @@
    estado: "disponible" | "lista-espera" | "reservada" | "vendida"
    ===================================================== */
 
-const catalogo = [
+let catalogo = [
   {
     id: "colibri",
     nombre: "Vitral colibrí",
@@ -122,4 +122,44 @@ const catalogo = [
 // 18000 → "₡18.000"
 function formatoPrecio(numero) {
   return '₡' + numero.toLocaleString('de-DE');
+}
+
+/* =====================================================
+   Google Sheets: catalogo viene de la hoja que maneja Amanda.
+   ===================================================== */
+const URL_CATALOGO = 'https://script.google.com/macros/s/AKfycbzTnVdlsNQp9mJMLtHgtMo5Ly51ui7aP5VGfX1gQbdpIXm691u7M4HysLEwLP1pzSuAIQ/exec';
+
+// 1. Si ya hay una copia guardada de la hoja, usarla de una vez
+try {
+  const copiaGuardada = localStorage.getItem('catalogoHoja');
+  if (copiaGuardada) catalogo = JSON.parse(copiaGuardada);
+} catch (error) {
+}
+
+// 2. Ordenar los datos que vienen de la hoja
+function limpiarPieza(fila) {
+  return {
+    id: String(fila.id).trim(),
+    nombre: fila.nombre,
+    categoria: String(fila.categoria).trim().toLowerCase(),
+    precio: Number(fila.precio),
+    estado: String(fila.estado).trim().toLowerCase(),
+    medidas: fila.medidas,
+    descripcion: fila.descripcion,
+    imagen: fila.imagen,
+    alt: fila.alt
+  };
+}
+
+// 3. Pedir la versión más nueva a la hoja y guardarla
+function cargarCatalogo() {
+  return fetch(URL_CATALOGO)
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+      catalogo = datos.map(limpiarPieza);
+      localStorage.setItem('catalogoHoja', JSON.stringify(catalogo));
+    })
+    .catch(() => {
+      console.warn('No se pudo leer la hoja; se usa el catálogo guardado.');
+    });
 }

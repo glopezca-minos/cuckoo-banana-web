@@ -75,3 +75,4 @@ listaCarrito.addEventListener('click', evento => {
 });
 
 mostrarCarrito();
+cargarCatalogo().then(mostrarCarrito);

@@ -227,3 +227,4 @@ if (disponibilidadEnlace) {
 }
 
 aplicarFiltros();
+cargarCatalogo().then(aplicarFiltros);
