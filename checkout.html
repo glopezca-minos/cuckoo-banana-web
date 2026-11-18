@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar compra | Cuckoo Banana</title>
+
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- tipografia -->
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- estilos -->
+  <link href="css/estilos.css" rel="stylesheet">
+  <link href="css/checkout.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- header simple: solo el logo -->
+  <div id="header" data-simple></div>
+
+  <!-- Resumen plegable (solo en celular) -->
+  <button class="cb-ver-resumen" type="button" id="boton-ver-resumen"
+          aria-controls="resumen-pedido" aria-expanded="false">
+    <i class="bi bi-cart3" aria-hidden="true"></i>
+    <span>Ver resumen · <strong id="ver-resumen-total">₡0</strong></span>
+    <i class="bi bi-chevron-down cb-ver-resumen-flecha" aria-hidden="true"></i>
+  </button>
+
+  <!-- ===== Contenido ===== -->
+  <main class="cb-main cb-checkout">
+
+    <div class="cb-checkout-layout">
+
+      <!-- ===== Columna izquierda: formulario ===== -->
+      <form class="cb-checkout-form" id="form-checkout" novalidate>
+
+        <h1>Finalizar compra</h1>
+
+        <!-- 1. Contacto -->
+        <fieldset class="cb-paso">
+          <legend><span class="cb-paso-numero">1</span> Contacto</legend>
+
+          <div class="cb-campo">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+            <p class="cb-error">Escribe tu nombre completo.</p>
+          </div>
+
+          <div class="cb-fila-2">
+            <div class="cb-campo">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" inputmode="numeric"
+                     autocomplete="tel" placeholder="8888-8888" required>
+              <p class="cb-error">Ingresa un número de 8 dígitos.</p>
+            </div>
+
+            <div class="cb-campo">
+              <label for="correo">Correo</label>
+              <input type="email" id="correo" name="correo" autocomplete="email" placeholder="nombre@correo.com">
+              <p class="cb-error">Revisa el formato del correo.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 2. Envío -->
+        <fieldset class="cb-paso">
+          <legend><span class="cb-paso-numero">2</span> Envío</legend>
+
+          <div class="cb-fila-3">
+            <div class="cb-campo">
+              <label for="provincia">Provincia</label>
+              <select id="provincia" name="provincia" required>
+                <option value="">Seleccionar</option>
+              </select>
+              <p class="cb-error">Elige una provincia.</p>
+            </div>
+
+            <div class="cb-campo">
+              <label for="canton">Cantón</label>
+              <select id="canton" name="canton" required disabled>
+                <option value="">Seleccionar</option>
+              </select>
+              <p class="cb-error">Elige un cantón.</p>
+            </div>
+
+            <div class="cb-campo">
+              <label for="distrito">Distrito</label>
+              <input type="text" id="distrito" name="distrito" placeholder="Ej.: San Pedro" required>
+              <p class="cb-error">Escribe tu distrito.</p>
+            </div>
+          </div>
+
+          <div class="cb-campo">
+            <label for="direccion">Dirección exacta</label>
+            <textarea id="direccion" name="direccion" rows="4"
+                      placeholder="Señas, número de casa, color…" required></textarea>
+            <p class="cb-error">Escribe la dirección exacta para el envío.</p>
+          </div>
+        </fieldset>
+
+        <!-- 3. Costo de envío -->
+        <fieldset class="cb-paso">
+          <legend><span class="cb-paso-numero">3</span> Costo de envío</legend>
+
+          <label class="cb-opcion">
+            <input type="radio" name="zona" value="gam" checked>
+            <span class="cb-opcion-texto">Gran Área Metropolitana · Correos de Costa Rica</span>
+            <strong id="precio-gam">₡3.000</strong>
+          </label>
+
+          <label class="cb-opcion">
+            <input type="radio" name="zona" value="fuera-gam">
+            <span class="cb-opcion-texto">Fuera del GAM · Correos de Costa Rica</span>
+            <strong id="precio-fuera-gam">₡4.000</strong>
+          </label>
+
+          <p class="cb-nota">Tarifas de ejemplo; se confirman con Correos.</p>
+        </fieldset>
+
+        <!-- 4. Pago -->
+        <fieldset class="cb-paso">
+          <legend><span class="cb-paso-numero">4</span> Pago</legend>
+
+          <label class="cb-opcion cb-opcion-pago">
+            <input type="radio" name="pago" value="sinpe" checked>
+            <span class="cb-opcion-texto">
+              <strong>SINPE Móvil</strong>
+              <small>Recibirás el número y tu código de pedido al confirmar.</small>
+            </span>
+          </label>
+        </fieldset>
+
+        <label class="cb-recordar">
+          <input type="checkbox" id="recordar" checked>
+          Recordar mis datos
+        </label>
+
+        <!-- Aviso (en celular va aquí; en desktop está en el resumen) -->
+        <p class="cb-aviso-reserva cb-solo-movil">Al confirmar, tus piezas quedan reservadas por 24 horas.</p>
+
+        <button type="submit" class="cb-btn cb-btn-principal cb-confirmar">Confirmar pedido</button>
+
+      </form>
+
+      <!-- ===== Columna derecha: resumen ===== -->
+      <aside class="cb-resumen-pedido" id="resumen-pedido" aria-label="Resumen del pedido">
+        <h2>Resumen del pedido</h2>
+
+        <!-- Las piezas las crea js/checkout.js -->
+        <ul class="cb-mini-lista" id="mini-lista"></ul>
+
+        <div class="cb-resumen-fila">
+          <span>Subtotal</span>
+          <span id="checkout-subtotal">₡0</span>
+        </div>
+        <div class="cb-resumen-fila">
+          <span id="checkout-envio-etiqueta">Envío (GAM)</span>
+          <span id="checkout-envio">₡0</span>
+        </div>
+        <div class="cb-resumen-fila cb-resumen-total">
+          <span>Total</span>
+          <span id="checkout-total">₡0</span>
+        </div>
+
+        <p class="cb-aviso-reserva cb-solo-desktop">Al confirmar, tus piezas quedan reservadas por 24 horas.</p>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- footer -->
+  <div id="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

@@ -25,7 +25,7 @@ h1, h2, h3 {
 }
 
 /* =====================================
-   Header Cuckoo Banana
+   Header 
    ===================================== */
 
 .cb-header {
@@ -130,6 +130,11 @@ h1, h2, h3 {
 
 .cb-cart:hover {
   color: var(--arcilla);
+}
+
+/* Header simple checkout*/
+.cb-header-simple {
+  justify-content: flex-start;
 }
 
 /* =====================================

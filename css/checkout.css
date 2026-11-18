@@ -1,0 +1,330 @@
+/* =====================================
+   Checkout
+   Solo para checkout.html
+   ===================================== */
+
+.cb-checkout {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 48px 40px 96px;
+}
+
+.cb-checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 440px;   /* formulario | resumen */
+  gap: 72px;
+  align-items: start;
+}
+
+.cb-checkout h1 {
+  font-size: clamp(36px, 5vw, 60px);
+  margin-bottom: 32px;
+}
+
+/* ===== Pasos numerados ===== */
+
+.cb-paso {
+  border: none;
+  padding: 0;
+  margin: 0 0 40px;
+}
+
+.cb-paso legend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-family: "Gloock", Georgia, serif;
+  font-size: 32px;
+}
+
+.cb-paso-numero {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--tinta);
+  color: #fff;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ===== Campos ===== */
+
+.cb-fila-2,
+.cb-fila-3 {
+  display: grid;
+  gap: 16px;
+}
+
+.cb-fila-2 { grid-template-columns: 1fr 1fr; }
+.cb-fila-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.cb-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.cb-campo label {
+  font-size: 14px;
+  color: var(--texto);
+}
+
+.cb-campo input,
+.cb-campo select,
+.cb-campo textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 4px;
+  background-color: #fdfbf7;
+  color: var(--texto);
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 16px;            /* 16px evita que el celular haga zoom al escribir */
+  transition: border-color 0.2s ease;
+}
+
+.cb-campo textarea { resize: vertical; }
+
+.cb-campo input:focus,
+.cb-campo select:focus,
+.cb-campo textarea:focus {
+  outline: none;
+  border: 2px solid var(--naranja);
+  padding: 11px 13px;         /* compensa el borde más grueso */
+}
+
+.cb-campo select:disabled {
+  color: var(--texto-suave);
+  cursor: not-allowed;
+}
+
+/* Mensaje de error: oculto hasta que el campo tenga error */
+.cb-error {
+  display: none;
+  margin: 0;
+  font-size: 13px;
+  color: #c9372c;
+}
+
+.cb-campo.con-error input,
+.cb-campo.con-error select,
+.cb-campo.con-error textarea {
+  border: 2px solid #c9372c;
+  padding: 11px 13px;
+}
+
+.cb-campo.con-error .cb-error { display: block; }
+
+/* ===== Opciones (envío y pago) ===== */
+
+.cb-opcion {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+  border: 1px solid var(--borde);
+  border-radius: 4px;
+  background-color: #fdfbf7;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* El borde se pinta naranja cuando la opción está elegida */
+.cb-opcion:has(input:checked) {
+  border: 2px solid var(--naranja);
+  padding: 15px;
+}
+
+.cb-opcion input {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  accent-color: var(--naranja);
+}
+
+.cb-opcion-texto { flex: 1; }
+
+.cb-opcion-pago { align-items: flex-start; }
+
+.cb-opcion-pago small {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--texto-suave);
+}
+
+.cb-nota {
+  font-size: 13px;
+  color: var(--texto-suave);
+  margin: 0;
+}
+
+.cb-recordar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.cb-recordar input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--naranja);
+}
+
+.cb-confirmar {
+  padding: 16px;
+  font-size: 16px;
+}
+
+/* ===== Resumen ===== */
+
+.cb-resumen-pedido {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px;
+  background-color: #fdfbf7;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+}
+
+.cb-resumen-pedido h2 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.cb-mini-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 0 16px;
+  margin: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--borde);
+}
+
+.cb-mini-item {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+}
+
+.cb-mini-foto {
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cb-mini-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cb-mini-foto .cb-foto-placeholder { font-size: 9px; padding: 4px; }
+
+.cb-mini-precio { font-weight: 700; }
+
+.cb-resumen-fila {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.cb-resumen-total {
+  padding-top: 16px;
+  border-top: 1px solid var(--borde);
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.cb-aviso-reserva {
+  padding: 14px 16px;
+  margin: 0;
+  border-radius: 4px;
+  background-color: var(--arena);
+  font-size: 15px;
+  color: var(--texto);
+}
+
+.cb-solo-movil { display: none; }
+
+/* Botón "Ver resumen": solo en celular */
+.cb-ver-resumen { display: none; }
+
+/* ===== Tablet ===== */
+
+@media (max-width: 1000px) {
+  .cb-checkout-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cb-resumen-pedido {
+    position: static;
+    order: -1;                /* en tablet, el resumen va arriba del formulario */
+  }
+}
+
+/* ===== Celular ===== */
+
+@media (max-width: 700px) {
+  .cb-checkout { padding: 20px 16px 64px; }
+
+  .cb-checkout h1 { margin-bottom: 24px; }
+
+  .cb-paso legend { font-size: 28px; }
+
+  .cb-fila-2,
+  .cb-fila-3 {
+    grid-template-columns: 1fr;   /* un campo por línea */
+    gap: 0;
+  }
+
+  /* Barra "Ver resumen" debajo del header */
+  .cb-ver-resumen {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 16px;
+    border: none;
+    border-bottom: 1px solid var(--borde);
+    background-color: var(--blanco-calido);
+    color: var(--texto);
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .cb-ver-resumen[aria-expanded="true"] .cb-ver-resumen-flecha {
+    transform: rotate(180deg);
+  }
+
+  /* El resumen se esconde hasta que tocan "Ver resumen" */
+  .cb-resumen-pedido { display: none; }
+  .cb-resumen-pedido.abierto { display: flex; }
+
+  .cb-solo-desktop { display: none; }
+
+  .cb-solo-movil {
+    display: block;
+    margin-bottom: 24px;
+  }
+}

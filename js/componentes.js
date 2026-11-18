@@ -106,8 +106,22 @@ const footerHTML = `
 </footer>
 `;
 
+/* ===== 2b. Header simple para checkout ===== */
+const headerSimpleHTML = `
+<header class="cb-header">
+  <div class="cb-header-container cb-header-simple">
+    <a href="index.html" class="cb-header-logo">
+      <img src="img/logo.svg" alt="Cuckoo Banana">
+      <span class="cb-logo-subtitle">ARTE EN VIDRIO</span>
+    </a>
+  </div>
+</header>
+`;
+
 /* ===== 3. Insertar header y footer en la página ===== */
-document.getElementById('header').outerHTML = headerHTML;
+// Si la página tiene <div id="header" data-simple>, se usa el header solo con logo
+const contenedorHeader = document.getElementById('header');
+contenedorHeader.outerHTML = contenedorHeader.hasAttribute('data-simple') ? headerSimpleHTML : headerHTML;
 document.getElementById('footer').outerHTML = footerHTML;
 
 /* ===== 4. Marcar en el menú la página actual ===== */
@@ -124,7 +138,7 @@ document.querySelectorAll('.cb-navigation a').forEach(enlace => {
 const botonMenu = document.querySelector('.cb-menu-btn');
 const menu = document.getElementById('menu-principal');
 
-botonMenu.addEventListener('click', () => {
+if (botonMenu) botonMenu.addEventListener('click', () => {
   const abierto = menu.classList.toggle('abierto');
   botonMenu.setAttribute('aria-expanded', abierto);
   botonMenu.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
