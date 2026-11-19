@@ -32,7 +32,7 @@ function crearItem(pieza) {
       <div class="cb-item-info">
         <h2 class="cb-item-nombre"><a href="producto.html?id=${pieza.id}">${pieza.nombre}</a></h2>
         <span class="cb-estado cb-estado-${pieza.estado}">${nombresEstado[pieza.estado]}</span>
-        <p class="cb-item-detalle">Pieza única</p>
+        <p class="cb-item-detalle">Hecha a mano: cada pieza puede variar</p>
         <button class="cb-item-eliminar" type="button" data-quitar="${pieza.id}">× Eliminar</button>
       </div>
 

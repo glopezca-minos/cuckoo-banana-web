@@ -4,75 +4,25 @@
 (() => {
   "use strict";
 
-  // Datos de demostración para el prototipo.
-  // Confirmar precios, medidas y disponibilidad con Amanda.
-
-  const productos = {
-    colibri: {
-      nombre: "Vitral colibrí",
-      precio: 18000,
-      estado: "disponible",
-      entrega: "Entrega en 2 a 4 días",
-      medidas: "Por confirmar",
-      categoria: "Aves",
-      descripcion:
-        "Colibrí en vidrio de colores, elaborado a mano en el taller de Heredia.",
-      imagen: "img/vitral-colibri-verde.jpeg",
-      alt: "Vitral artesanal de colibrí verde a contraluz"
-    },
-
-    tucan: {
-      nombre: "Vitral tucán",
-      precio: 22500,
-      estado: "espera",
-      entrega: "Lista de espera estimada de 2 a 5 meses",
-      medidas: "Por confirmar",
-      categoria: "Aves",
-      descripcion:
-        "Tucán elaborado a mano con diferentes colores y texturas de vidrio.",
-      imagen: "img/vitral-tucan.jpeg",
-      alt: "Vitral artesanal de tucán"
-    },
-
-    lapa: {
-      nombre: "Vitral lapa",
-      precio: 22500,
-      estado: "disponible",
-      entrega: "Entrega en 2 a 4 días",
-      medidas: "Por confirmar",
-      categoria: "Aves",
-      descripcion:
-        "Lapa en vidrio de colores, elaborada a mano en el taller de Heredia.",
-      imagen: "img/vitral-lapa.jpg",
-      alt: "Vitral artesanal de lapa"
-    },
-
-    buho: {
-      nombre: "Vitral búho",
-      precio: 28000,
-      estado: "disponible",
-      entrega: "Entrega en 2 a 4 días",
-      medidas: "Por confirmar",
-      categoria: "Aves",
-      descripcion:
-        "Búho de vidrio de colores, elaborado a mano. Cada pieza es única.",
-      imagen: "img/vitral-buho.jpeg",
-      alt: "Vitral artesanal de búho"
-    },
-
-    orquidea: {
-      nombre: "Orquídea",
-      precio: 15000,
-      estado: "disponible",
-      entrega: "Entrega en 2 a 4 días",
-      medidas: "Por confirmar",
-      categoria: "Flores",
-      descripcion:
-        "Pieza floral de vidrio de colores, hecha a mano en Heredia.",
-      imagen: "img/vitral-orquidea.jpeg",
-      alt: "Vitral artesanal de flor"
-    }
+  // Los datos vienen de catalogo.js (y de la hoja de google sheets)
+  const textoEntrega = {
+    "disponible": "Entrega en 2 a 4 días",
+    "lista-espera": "Lista de espera estimada de 2 a 5 meses",
+    "reservada": "Reservada: esperando confirmación de pago",
+    "vendida": "Esta pieza ya no se elabora"
   };
+
+  const productos = {};
+
+  catalogo.forEach((pieza) => {
+    productos[pieza.id] = {
+      ...pieza,
+      estado: pieza.estado === "lista-espera" ? "espera" : pieza.estado,
+      entrega: textoEntrega[pieza.estado],
+      medidas: pieza.medidas || "Por confirmar",
+      categoria: nombresCategoria[pieza.categoria] || pieza.categoria
+    };
+  });
 
   // Producto seleccionado en la dirección web
 
@@ -114,6 +64,14 @@
 
   botonCarrito.hidden = estaEnEspera;
   botonLista.hidden = !estaEnEspera;
+
+  
+  // Reservada o vendida: no se puede comprar
+  if (producto.estado === "reservada" || producto.estado === "vendida") {
+    estado.textContent = producto.estado === "reservada" ? "Reservada" : "Vendida";
+    botonCarrito.disabled = true;
+    botonCarrito.textContent = estado.textContent;
+  }
 
   // WhatsApp personalizado por producto
 
@@ -227,31 +185,31 @@
   mostrarImagen(0);
 
 
-  /* - Botón de carrito (pendiente de integrar)- */
+  /* - Botón de carrito - */
 
-  function avisarCarrito(elemento) {
-    elemento.textContent =
-      "El carrito todavía debe conectarse con el sistema de Glori. No se ha realizado ninguna compra.";
+  function marcarEnCarrito(boton) {
+    boton.disabled = true;
+    boton.innerHTML = '<i class="bi bi-check2" aria-hidden="true"></i> En el carrito';
+  }
+
+  if (producto.estado === "disponible" && estaEnCarrito(idActual)) {
+    marcarEnCarrito(botonCarrito);
   }
 
   botonCarrito.addEventListener("click", () => {
-    avisarCarrito(feedback);
+    agregarAlCarrito(idActual);
+    marcarEnCarrito(botonCarrito);
   });
 
 
   /* - Productos similares - */
 
-  const ordenSugeridos = [
-    "tucan",
-    "lapa",
-    "buho",
-    "orquidea",
-    "colibri"
-  ];
-
-  const sugeridos = ordenSugeridos
-    .filter((id) => id !== idActual)
-    .slice(0, 4);
+  // 4 piezas que se puedan comprar o pedir, sin repetir la actual
+  const sugeridos = catalogo
+    .filter((pieza) => pieza.id !== idActual)
+    .filter((pieza) => pieza.estado === "disponible" || pieza.estado === "lista-espera")
+    .slice(0, 4)
+    .map((pieza) => pieza.id);
 
   const grid = obtener("ficha-relacionados-grid");
 
@@ -330,10 +288,11 @@
     const agregar = tarjeta.querySelector("[data-agregar]");
 
     if (agregar) {
+      if (estaEnCarrito(id)) marcarEnCarrito(agregar);
+
       agregar.addEventListener("click", () => {
-        avisarCarrito(
-          tarjeta.querySelector(".cb-ficha-relacionado-mensaje")
-        );
+        agregarAlCarrito(id);
+        marcarEnCarrito(agregar);
       });
     }
 
