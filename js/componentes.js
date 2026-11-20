@@ -84,7 +84,7 @@ const footerHTML = `
     <div class="cb-footer-column">
       <h3>Ayuda</h3>
       <a href="ayuda.html">Envíos y preguntas frecuentes</a>
-      <a href="ayuda.html">Lista de espera</a>
+      <a href="ayuda.html#lista-espera">Lista de espera</a>
       <a href="personalizados.html">Pedidos personalizados</a>
     </div>
 
