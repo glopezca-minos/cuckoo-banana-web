@@ -831,3 +831,194 @@
     width: 100%;
   }
 }
+/* =====================================================
+   HERO: carrusel a todo el ancho con texto encima
+   ===================================================== */
+
+.cb-hero {
+  position: relative;
+  height: min(78vh, 720px);
+  min-height: 520px;
+  overflow: hidden;
+  background-color: var(--tinta);
+  margin-bottom: 72px;
+}
+
+/* El carrusel ocupa todo el hero */
+.cb-hero .carousel,
+.cb-hero .carousel-inner,
+.cb-hero .carousel-item {
+  height: 100%;
+}
+
+/* Fondo: la misma foto, grande y difuminada */
+.cb-hero-fondo {
+  position: absolute;
+  inset: -60px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(40px) saturate(1.3);
+}
+
+/* Foto nítida a la derecha (escritorio) */
+.cb-hero-foto {
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  right: 8%;
+  height: calc(100% - 80px);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Sombra a la izquierda para que el texto se lea bien */
+.cb-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(26, 20, 15, 0.7) 0%, rgba(26, 20, 15, 0.35) 45%, rgba(26, 20, 15, 0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Texto encima */
+.cb-hero-texto {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  max-width: 560px;
+  color: var(--crema-claro);
+}
+
+.cb-hero-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--arena);
+  margin-bottom: 16px;
+}
+
+.cb-hero-titulo {
+  font-family: "Gloock", serif;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1.02;
+  color: var(--crema-claro);
+  margin-bottom: 20px;
+}
+
+.cb-hero-descripcion {
+  font-size: 18px;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin-bottom: 28px;
+}
+
+.cb-hero-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cb-hero-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cb-hero-btn-principal {
+  background-color: var(--naranja);
+  color: #fff;
+}
+
+.cb-hero-btn-principal:hover {
+  background-color: var(--terracota);
+  color: #fff;
+}
+
+.cb-hero-btn-claro {
+  border: 1px solid var(--crema-claro);
+  color: var(--crema-claro);
+}
+
+.cb-hero-btn-claro:hover {
+  background-color: var(--crema-claro);
+  color: var(--tinta);
+}
+
+/* Circulitos */
+.cb-hero .carousel-indicators {
+  z-index: 3;
+  margin-bottom: 24px;
+}
+
+.cb-hero .carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  margin: 0 6px;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--crema-claro);
+  opacity: 0.5;
+}
+
+.cb-hero .carousel-indicators .active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* ===== Celular: la foto llena la pantalla y el texto va abajo ===== */
+@media (max-width: 700px) {
+  .cb-hero {
+    height: 82svh;
+    min-height: 560px;
+    margin-bottom: 48px;
+  }
+
+  .cb-hero-foto {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    object-position: center top;
+  }
+
+  .cb-hero::after {
+    background: linear-gradient(0deg, rgba(26, 20, 15, 0.85) 0%, rgba(26, 20, 15, 0.45) 45%, rgba(26, 20, 15, 0) 70%);
+  }
+
+  .cb-hero-texto {
+    top: auto;
+    bottom: 56px;
+    left: 16px;
+    right: 16px;
+    transform: none;
+  }
+
+  .cb-hero-titulo {
+    font-size: 36px;
+  }
+
+  .cb-hero-descripcion {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .cb-hero-botones {
+    flex-direction: column;
+  }
+
+  .cb-hero .carousel-indicators {
+    margin-bottom: 16px;
+  }
+}

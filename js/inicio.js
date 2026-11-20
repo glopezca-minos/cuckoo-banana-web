@@ -19,3 +19,9 @@ document.querySelectorAll('[data-producto]').forEach(boton => {
     marcarEnCarrito(boton);
   });
 });
+
+//menos movimiento, el carrusel no avanza solo
+const heroCarrusel = document.getElementById('hero-carrusel');
+if (heroCarrusel && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  bootstrap.Carousel.getOrCreateInstance(heroCarrusel, { ride: false, interval: false });
+}

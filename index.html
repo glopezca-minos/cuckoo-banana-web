@@ -58,51 +58,60 @@
   <main class="cb-main cb-home">
 
     <!-- HERO -->
-    <section class="cb-home-hero">
+    <section class="cb-hero" aria-label="Presentación de Cuckoo Banana">
 
-      <div class="cb-home-container cb-home-hero-grid">
+      <div id="hero-carrusel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
-        <!-- Texto principal -->
-        <div class="cb-home-hero-content">
+        <!-- Circulitos para pasar las fotos -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#hero-carrusel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button>
+          <button type="button" data-bs-target="#hero-carrusel" data-bs-slide-to="1" aria-label="Foto 2"></button>
+          <button type="button" data-bs-target="#hero-carrusel" data-bs-slide-to="2" aria-label="Foto 3"></button>
+          <button type="button" data-bs-target="#hero-carrusel" data-bs-slide-to="3" aria-label="Foto 4"></button>
+        </div>
 
-          <p class="cb-home-eyebrow">
-            HECHO A MANO EN HEREDIA
-          </p>
+        <!-- Fotos: cada una tiene un fondo difuminado de sí misma -->
+        <div class="carousel-inner">
 
-          <h1 class="cb-home-hero-title">
-            <span>Vitrales artesanales</span>
-            <span>inspirados en la</span>
-            <span>naturaleza de</span>
-            <span>Costa Rica</span>
-          </h1>
+          <div class="carousel-item active">
+            <div class="cb-hero-fondo" style="background-image: url('img/hero-colibri.jpeg');"></div>
+            <img src="img/hero-colibri.jpeg" class="cb-hero-foto" alt="Vitral de martín pescador verde y azul sostenido a contraluz" fetchpriority="high">
+          </div>
 
-          <p class="cb-home-hero-description">
-            Piezas únicas de entrega inmediata,
-            por lista de espera o por encargo.
-          </p>
+          <div class="carousel-item">
+            <div class="cb-hero-fondo" style="background-image: url('img/vitral-tucan.jpeg');"></div>
+            <img src="img/vitral-tucan.jpeg" class="cb-hero-foto" alt="Vitral artesanal de tucán" loading="lazy">
+          </div>
 
-          <div class="cb-home-hero-actions">
+          <div class="carousel-item">
+            <div class="cb-hero-fondo" style="background-image: url('img/vitral-lapa.jpg');"></div>
+            <img src="img/vitral-lapa.jpg" class="cb-hero-foto" alt="Vitral de lapa roja con alas amarillas y azules" loading="lazy">
+          </div>
 
-          <a href="tienda.html?disponibilidad=disponible" class="cb-home-btn cb-home-btn-primary">
-            Ver disponibles
-          </a>
-
-            <a href="personalizados.html" class="cb-home-btn cb-home-btn-outline">
-              Pedir personalizado
-            </a>
-
+          <div class="carousel-item">
+            <div class="cb-hero-fondo" style="background-image: url('img/vitral-orquidea.jpeg');"></div>
+            <img src="img/vitral-orquidea.jpeg" class="cb-hero-foto" alt="Vitral de orquídea con pétalos claros" loading="lazy">
           </div>
 
         </div>
+      </div>
 
-        <!-- Imagen principal -->
-        <div class="cb-home-hero-image">
+      <!-- Texto encima de las fotos -->
+      <div class="cb-hero-texto">
+        <p class="cb-hero-eyebrow">Hecho a mano en Heredia</p>
 
-          <img src="img/hero-colibri.jpeg" alt="Vitral de ave de colores sostenido a contraluz" class="cb-home-photo"
-            fetchpriority="high">
+        <h1 class="cb-hero-titulo">
+          Vitrales artesanales inspirados en la naturaleza de Costa Rica
+        </h1>
 
+        <p class="cb-hero-descripcion">
+          Piezas de entrega inmediata, por lista de espera o por encargo.
+        </p>
+
+        <div class="cb-hero-botones">
+          <a href="tienda.html?disponibilidad=disponible" class="cb-hero-btn cb-hero-btn-principal">Ver disponibles</a>
+          <a href="personalizados.html" class="cb-hero-btn cb-hero-btn-claro">Pedir personalizado</a>
         </div>
-
       </div>
 
     </section>
