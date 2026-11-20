@@ -31,19 +31,20 @@ function quitarDelCarrito(id) {
   guardarCarrito(obtenerCarrito().filter(x => x !== id));
 }
 
-// Número del header: "Carrito (2)"
+// Número del header
 function actualizarContador() {
   const contador = document.getElementById('cart-count');
-  if (contador) contador.textContent = obtenerCarrito().length;
-}
-
-// Pequeño rebote del número al agregar
-function animarContador() {
-  const contador = document.getElementById('cart-count');
   if (!contador) return;
-  contador.classList.remove('cb-rebote');
-  void contador.offsetWidth;
-  contador.classList.add('cb-rebote');
+  const cantidad = obtenerCarrito().length;
+  contador.textContent = cantidad;
+  contador.hidden = cantidad === 0;
 }
 
-actualizarContador();
+// Al agregar: el carrito se sacude y el circulito salta
+function animarContador() {
+  const carrito = document.querySelector('.cb-cart');
+  if (!carrito) return;
+  carrito.classList.remove('cb-agregado');
+  void carrito.offsetWidth;            // reinicia la animación
+  carrito.classList.add('cb-agregado');
+}

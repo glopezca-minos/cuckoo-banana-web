@@ -24,15 +24,11 @@ const headerHTML = `
 
     <!-- Carrito -->
     <a href="carrito.html" class="cb-cart">
-      <svg width="27" height="27" viewBox="0 0 24 24"
-           fill="none" stroke="currentColor"
-           stroke-width="1.5" stroke-linecap="round"
-           stroke-linejoin="round" aria-hidden="true">
-        <circle cx="9" cy="21" r="1"></circle>
-        <circle cx="20" cy="21" r="1"></circle>
-        <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path>
-      </svg>
-      <span><span class="cb-cart-text">Carrito </span>(<span id="cart-count">0</span>)</span>
+      <span class="cb-cart-icono">
+        <i class="bi bi-cart3" aria-hidden="true"></i>
+        <span class="cb-cart-badge" id="cart-count" hidden>0</span>
+      </span>
+      <span class="cb-cart-text">Carrito</span>
     </a>
 
     <!-- Botón de menú (solo en celular) -->

@@ -29,7 +29,7 @@ h1, h2, h3 {
    ===================================== */
 
 .cb-header {
-  background-color: var(--crema-claro);
+  background-color: var(--blanco-calido);
   border-bottom: 1px solid var(--borde);
   width: 100%;
 }
@@ -213,8 +213,6 @@ h1, h2, h3 {
     font-size: 9px;
     letter-spacing: 0.4em;
   }
-
-  .cb-cart-text { display: none; }
 
   .cb-menu-btn {
     display: flex;
@@ -455,20 +453,6 @@ h1, h2, h3 {
   }
 }
 
-/* Rebote del número del carrito al agregar una pieza */
-
-.cb-rebote {
-  display: inline-block;
-  animation: cb-rebote 400ms ease;
-}
-
-@keyframes cb-rebote {
-  0%   { transform: scale(1); }
-  40%  { transform: scale(1.5); }
-  70%  { transform: scale(0.9); }
-  100% { transform: scale(1); }
-}
-
 /* =====================================
    Tarjetas de producto (compartidas)
    (Inicio, Tienda y Ficha)
@@ -694,5 +678,111 @@ h1, h2, h3 {
   .cb-whatsapp svg {
     width: 29px;
     height: 29px;
+  }
+}
+
+/* Ícono del carrito */
+.cb-cart .bi {
+  font-size: 26px;
+  line-height: 1;
+}
+
+/* Header celular: ☰ | logo centrado | carrito */
+@media (max-width: 700px) {
+  .cb-header-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cb-menu-btn { justify-self: start; }
+  .cb-header-logo { justify-self: center; }
+  .cb-cart { justify-self: end; margin-left: 0; }
+  .cb-cart .bi { font-size: 22px; }
+  .cb-navigation { grid-column: 1 / -1; }
+  .cb-header-simple { grid-template-columns: 1fr; }
+}
+
+/* =====================================
+   Carrito del header: circulito con el número
+   ===================================== */
+
+.cb-cart {
+  gap: 16px;
+}
+
+.cb-cart-icono {
+  position: relative;
+  display: inline-flex;
+}
+
+.cb-cart-icono .bi {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.cb-cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background-color: var(--naranja);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+}
+
+.cb-cart-badge[hidden] { display: none; }
+
+/* Al agregar: el carrito se sacude y circulito salta */
+.cb-cart.cb-agregado .cb-cart-icono {
+  animation: cb-sacudir 600ms ease;
+}
+
+.cb-cart.cb-agregado .cb-cart-badge {
+  animation: cb-saltar 600ms ease;
+}
+
+@keyframes cb-sacudir {
+  0%, 100% { transform: rotate(0); }
+  20% { transform: rotate(-14deg); }
+  40% { transform: rotate(12deg); }
+  60% { transform: rotate(-8deg); }
+  80% { transform: rotate(4deg); }
+}
+
+@keyframes cb-saltar {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.6); }
+  55%  { transform: scale(0.85); }
+  75%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* menos movimiento, no se anima */
+@media (prefers-reduced-motion: reduce) {
+  .cb-cart.cb-agregado .cb-cart-icono,
+  .cb-cart.cb-agregado .cb-cart-badge {
+    animation: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .cb-cart-icono .bi { font-size: 24px; }
+
+  /* celular solo se ve el ícono */
+  .cb-cart-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 }
