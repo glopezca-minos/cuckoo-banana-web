@@ -851,7 +851,7 @@
   height: 100%;
 }
 
-/* Fondo: la misma foto, grande y difuminada */
+/* Fondo: la misma foto, grande y difuminada*/
 .cb-hero-fondo {
   position: absolute;
   inset: -60px;
@@ -1020,5 +1020,61 @@
 
   .cb-hero .carousel-indicators {
     margin-bottom: 16px;
+  }
+}
+
+/* =====================================================
+   HERO CELULAR: foto arriba, texto abajo sobre fondo oscuro
+   ===================================================== */
+@media (max-width: 700px) {
+  .cb-hero {
+    height: auto;
+    min-height: 0;
+    background-color: #1f1813;
+  }
+
+  /* Zona de la foto */
+  .cb-hero .carousel {
+    position: relative;
+    height: 50svh;
+    min-height: 320px;
+  }
+
+  .cb-hero-foto {
+    object-position: center;
+  }
+
+  /* sombra no cubre todo */
+  .cb-hero::after {
+    display: none;
+  }
+
+  .cb-hero .carousel::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 35%;
+    background: linear-gradient(0deg, #1f1813 0%, rgba(31, 24, 19, 0) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* El texto va debajo de la foto */
+  .cb-hero-texto {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    margin-top: -8px;
+    padding: 0 16px 36px;
+  }
+
+  /* Circulitos sobre la foto, sin tocar el texto */
+  .cb-hero .carousel-indicators {
+    margin-bottom: 40px;
   }
 }
