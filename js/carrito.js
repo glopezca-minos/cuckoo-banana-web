@@ -48,3 +48,5 @@ function animarContador() {
   void carrito.offsetWidth;            // reinicia la animación
   carrito.classList.add('cb-agregado');
 }
+
+actualizarContador();

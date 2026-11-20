@@ -3,7 +3,7 @@
    Necesita: carrito.js y catalogo.js cargados antes.
    ===================================================== */
 
-/* ===== Configuración: confirmar estos montos con Amanda ===== */
+/* ===== Configuración ===== */
 const COSTO_ENVIO = {
   'gam': 3000,
   'fuera-gam': 4000

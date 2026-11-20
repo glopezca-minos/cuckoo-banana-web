@@ -138,7 +138,7 @@ function formatoPrecio(numero) {
 }
 
 /* =====================================================
-   Google Sheets: catalogo viene de la hoja que maneja Amanda.
+   Google Sheets
    ===================================================== */
 const URL_CATALOGO = 'https://script.google.com/macros/s/AKfycbzTnVdlsNQp9mJMLtHgtMo5Ly51ui7aP5VGfX1gQbdpIXm691u7M4HysLEwLP1pzSuAIQ/exec';
 
