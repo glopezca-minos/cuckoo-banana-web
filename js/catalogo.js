@@ -193,6 +193,9 @@ function limpiarPieza(fila) {
     medidas: fila.medidas,
     descripcion: fila.descripcion,
     imagen: convertirImagen(fila.imagen),
+    fotosExtra: [fila.imagen2, fila.imagen3, fila.imagen4]
+    .map(convertirImagen)
+    .filter(Boolean),
     alt: fila.alt
   };
 }

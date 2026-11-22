@@ -82,32 +82,21 @@
     "https://wa.me/50671291718?text=" +
     encodeURIComponent(mensajeConsulta);
 
+  // Galería: la foto principal + las fotos extra de la hoja (imagen2, imagen3, imagen4)
+  const nombresFotos = ["Foto principal", "Foto 2", "Foto 3", "Foto 4"];
 
-  /* -Galería de fotos - */
+  const galeria = [producto.imagen, ...(producto.fotosExtra || [])]
+    .filter(Boolean)
+    .map((imagen, i) => ({
+      texto: nombresFotos[i],
+      imagen: imagen,
+      alt: i === 0 ? producto.alt : `${producto.nombre}, foto ${i + 1}`
+    }));
 
-  // Por ahora solamente tenemos la foto principal
-  // confirmada de cada producto.
-  // Las miniaturas restantes son placeholders.
-
-  const galeria = [
-    {
-      texto: "Foto principal",
-      imagen: producto.imagen,
-      alt: producto.alt
-    },
-    {
-      texto: "Detalle del vidrio",
-      imagen: null
-    },
-    {
-      texto: "Textura",
-      imagen: null
-    },
-    {
-      texto: "Con luz natural",
-      imagen: null
-    }
-  ];
+  // Si la pieza no tiene ninguna foto, se muestra el recuadro de relleno
+  if (galeria.length === 0) {
+    galeria.push({ texto: "Foto de la pieza a contraluz", imagen: null });
+  }
 
   const imagenPrincipal = obtener("ficha-imagen-principal");
   const placeholderPrincipal = obtener("ficha-placeholder-principal");
@@ -182,6 +171,8 @@
     contenedorMiniaturas.appendChild(boton);
   });
 
+    // Con una sola foto, las miniaturas no hacen falta
+  contenedorMiniaturas.hidden = galeria.length < 2;
   mostrarImagen(0);
 
 
