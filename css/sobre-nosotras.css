@@ -1,0 +1,570 @@
+
+.cb-sobre {
+  width: 100%;
+  background: var(--crema-claro, #f7f4ee);
+  color: var(--tinta, #1a1a1a);
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+.cb-sobre-wrap {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.cb-sobre-introduccion {
+  padding: 48px 0 60px;
+}
+
+.cb-sobre-migas {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  color: #66635c;
+  font-size: 14px;
+}
+
+.cb-sobre-migas a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cb-sobre-migas a:hover {
+  color: #99522f;
+}
+
+.cb-sobre-migas [aria-current="page"] {
+  color: #302e2b;
+  font-weight: 600;
+}
+
+.cb-sobre-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 90px);
+  align-items: start;
+}
+
+.cb-sobre-hero-texto {
+  min-width: 0;
+  padding-top: 14px;
+}
+
+.cb-sobre-etiqueta {
+  margin: 0 0 14px;
+  color: var(--arcilla, #99522f);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.cb-sobre-hero h1 {
+  max-width: 540px;
+  margin: 0 0 18px;
+  color: #1a1a1a;
+  font-family: "Gloock", Georgia, serif;
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.cb-sobre-descripcion {
+  max-width: 540px;
+  margin: 0;
+  color: #66635c;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.cb-sobre-hero-imagen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.cb-sobre-hero-foto {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transform: scale(1);
+  transition: transform 0.45s ease;
+}
+
+.cb-sobre-hero-imagen:hover .cb-sobre-hero-foto {
+  transform: scale(1.06);
+}
+
+.cb-sobre-historia-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 54px;
+}
+
+.cb-sobre-historia-card {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--borde, #ddd7ca);
+  border-radius: 12px;
+  background: #fffdfa;
+}
+
+.cb-sobre-historia-card .cb-sobre-etiqueta {
+  margin-bottom: 12px;
+  font-size: 11px;
+}
+
+.cb-sobre-historia-card h2 {
+  margin: 0 0 15px;
+  font-family: "Gloock", Georgia, serif;
+  font-size: 29px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.cb-sobre-historia-card > p:last-child {
+  margin: 0;
+  color: #66635c;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.cb-sobre-equipo {
+  padding: 52px 0 58px;
+  background: var(--blanco-calido, #eae4d2);
+}
+
+.cb-sobre-seccion-titulo {
+  margin: 0 0 28px;
+  font-family: "Gloock", Georgia, serif;
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.cb-sobre-equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 55px;
+}
+
+.cb-sobre-persona {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-width: 0;
+}
+
+.cb-sobre-persona-foto-marco {
+  position: relative;
+  width: 125px;
+  height: 125px;
+  flex: 0 0 125px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.cb-sobre-persona-foto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1);
+  transition: transform 0.45s ease;
+}
+
+.cb-sobre-persona-foto-marco:hover .cb-sobre-persona-foto {
+  transform: scale(1.1);
+}
+
+.cb-sobre-persona-info {
+  min-width: 0;
+}
+
+.cb-sobre-persona-info h3 {
+  margin: 0 0 6px;
+  font-family: "Gloock", Georgia, serif;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.cb-sobre-cargo {
+  margin: 0 0 7px;
+  color: var(--arcilla, #99522f);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.cb-sobre-persona-descripcion {
+  margin: 0;
+  color: #66635c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cb-sobre-proceso {
+  padding: 58px 0 96px;
+}
+
+.cb-sobre-proceso-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.cb-sobre-proceso-item {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.cb-sobre-foto-boton {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.05 / 1;
+  padding: 0;
+  border: 0;
+  border-radius: 13px;
+  overflow: hidden;
+  background: #eae4d2;
+  cursor: zoom-in;
+  appearance: none;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.cb-sobre-foto-boton img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1);
+  transition: transform 0.45s ease;
+}
+
+.cb-sobre-foto-boton:hover img {
+  transform: scale(1.08);
+}
+
+.cb-sobre-foto-boton:hover {
+  box-shadow: 0 12px 30px rgba(35, 29, 21, 0.13);
+}
+
+.cb-sobre-foto-boton:focus-visible {
+  outline: 3px solid #99522f;
+  outline-offset: 4px;
+}
+
+.cb-sobre-proceso-item figcaption {
+  margin-top: 12px;
+  padding: 0 3px;
+  color: #66635c;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.cb-sobre-accion {
+  display: flex;
+  justify-content: center;
+  margin-top: 38px;
+}
+
+.cb-sobre-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 28px;
+  border: 1px solid var(--naranja, #f27242);
+  border-radius: 4px;
+  background: var(--naranja, #f27242);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.cb-sobre-boton:hover {
+  background: var(--terracota, #d2774a);
+  border-color: var(--terracota, #d2774a);
+  color: white;
+}
+
+.cb-sobre-lightbox {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 24px;
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.cb-sobre-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.92);
+}
+
+.cb-sobre-lightbox[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cb-sobre-lightbox-imagen {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100dvh - 65px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.cb-sobre-lightbox-cerrar {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 31px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cb-sobre-lightbox-cerrar:hover {
+  background: rgba(255, 255, 255, 0.23);
+}
+
+.cb-sobre-lightbox-cerrar:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1000px) {
+  .cb-sobre-hero {
+    gap: 35px;
+  }
+
+  .cb-sobre-hero h1 {
+    font-size: clamp(36px, 4.7vw, 50px);
+  }
+
+  .cb-sobre-historia-card {
+    padding: 22px;
+  }
+
+  .cb-sobre-equipo-grid {
+    gap: 25px;
+  }
+
+  .cb-sobre-persona {
+    gap: 16px;
+  }
+
+  .cb-sobre-persona-foto-marco {
+    width: 100px;
+    height: 100px;
+    flex-basis: 100px;
+  }
+
+  .cb-sobre-proceso-grid {
+    gap: 13px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cb-sobre-wrap {
+    padding: 0 20px;
+  }
+
+  .cb-sobre-introduccion {
+    padding: 20px 0 25px;
+  }
+
+  .cb-sobre-migas {
+    display: none;
+  }
+
+  .cb-sobre-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cb-sobre-hero-imagen {
+    order: -1;
+    aspect-ratio: 1.4;
+    border-radius: 12px;
+  }
+
+  .cb-sobre-hero-texto {
+    padding-top: 0;
+  }
+
+  .cb-sobre-etiqueta {
+    margin-bottom: 9px;
+    font-size: 11px;
+  }
+
+  .cb-sobre-hero h1 {
+    margin-bottom: 14px;
+    font-size: clamp(30px, 8vw, 38px);
+  }
+
+  .cb-sobre-descripcion {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .cb-sobre-historia-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 26px;
+  }
+
+  .cb-sobre-historia-card {
+    padding: 19px;
+  }
+
+  .cb-sobre-historia-card h2 {
+    font-size: 25px;
+  }
+
+  .cb-sobre-historia-card > p:last-child {
+    font-size: 13px;
+  }
+
+  .cb-sobre-equipo {
+    padding: 28px 0 34px;
+  }
+
+  .cb-sobre-seccion-titulo {
+    margin-bottom: 22px;
+    font-size: 29px;
+  }
+
+  .cb-sobre-equipo-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cb-sobre-persona {
+    gap: 15px;
+  }
+
+  .cb-sobre-persona-foto-marco {
+    width: 84px;
+    height: 84px;
+    flex-basis: 84px;
+  }
+
+  .cb-sobre-persona-info h3 {
+    font-size: 23px;
+  }
+
+  .cb-sobre-cargo,
+  .cb-sobre-persona-descripcion {
+    font-size: 12px;
+  }
+
+  .cb-sobre-proceso {
+    padding: 30px 0 48px;
+  }
+
+  .cb-sobre-proceso-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .cb-sobre-foto-boton {
+    border-radius: 10px;
+  }
+
+  .cb-sobre-proceso-item figcaption {
+    margin-top: 9px;
+    font-size: 12px;
+  }
+
+  .cb-sobre-accion {
+    margin-top: 20px;
+  }
+
+  .cb-sobre-boton {
+    width: 100%;
+  }
+
+  .cb-sobre-lightbox {
+    padding: 12px;
+  }
+
+  .cb-sobre-lightbox-cerrar {
+    top: 12px;
+    right: 1x2px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 360px) {
+  .cb-sobre-hero h1 {
+    font-size: 30px;
+  }
+
+  .cb-sobre-persona-foto-marco {
+    width: 72px;
+    height: 72px;
+    flex-basis: 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-sobre-hero-foto,
+  .cb-sobre-persona-foto,
+  .cb-sobre-foto-boton,
+  .cb-sobre-foto-boton img,
+  .cb-sobre-boton {
+    transition: none;
+  }
+}
+
+/* Encuadre de la fotografía Armado del vitral */
+
+.cb-sobre-proceso-item:nth-child(3) .cb-sobre-foto-boton img {
+  object-position: center top;
+}

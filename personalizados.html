@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solicitá un vitral personalizado hecho a mano por Cuckoo Banana.">
+
+  <title>Pedidos personalizados | Cuckoo Banana</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="css/estilos.css" rel="stylesheet">
+  <link href="css/personalizados.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <main class="cb-main cb-personalizados">
+    <div class="cb-pers-container">
+
+      <nav class="cb-pers-breadcrumb" aria-label="Ruta de navegación">
+        <a href="index.html">Inicio</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Personalizados</span>
+      </nav>
+
+      <section class="cb-pers-intro" aria-labelledby="pers-titulo">
+        <h1 id="pers-titulo">Pedidos personalizados</h1>
+
+        <p>
+          ¿Tienes una idea? Sandra la convierte en un vitral único:
+          tu ave favorita, flores, frutas o insectos.
+        </p>
+      </section>
+
+      <section
+        class="cb-pers-galeria"
+        aria-label="Ejemplos de vitrales personalizados"
+      >
+
+        <button
+          type="button"
+          class="cb-pers-ejemplo cb-pers-ejemplo-colibri"
+          aria-label="Ampliar fotografía de un colibrí personalizado"
+        >
+          <img
+            src="img/personalizado-colibri.png"
+            alt="Vitral personalizado de un colibrí"
+            loading="lazy"
+          >
+        </button>
+
+        <button
+          type="button"
+          class="cb-pers-ejemplo cb-pers-ejemplo-flores"
+          aria-label="Ampliar fotografía de flores para ventana"
+        >
+          <img
+            src="img/flores-ventana.png"
+            alt="Vitral artesanal de flores para ventana"
+            loading="lazy"
+          >
+        </button>
+
+        <button
+          type="button"
+          class="cb-pers-ejemplo cb-pers-ejemplo-tucan"
+          aria-label="Ampliar fotografía de un tucán"
+        >
+          <img
+            src="img/tucan.png"
+            alt="Vitral artesanal de un tucán"
+            loading="lazy"
+          >
+        </button>
+
+        <button
+          type="button"
+          class="cb-pers-ejemplo cb-pers-ejemplo-mariposa"
+          aria-label="Ampliar fotografía de una mariposa"
+        >
+          <img
+            src="img/mariposa.png"
+            alt="Vitral artesanal de una mariposa"
+            loading="lazy"
+          >
+        </button>
+
+      </section>
+
+      <div class="cb-pers-content-grid">
+
+        <section
+          class="cb-pers-proceso"
+          aria-labelledby="pers-proceso-titulo"
+        >
+
+          <h2 id="pers-proceso-titulo">Cómo funciona</h2>
+
+          <ol class="cb-pers-pasos">
+
+            <li>
+              <span class="cb-pers-numero" aria-hidden="true">1</span>
+              <div>
+                <h3>Cuéntanos tu idea</h3>
+                <p>Ave, flor, fruta o insecto; colores y medidas.</p>
+              </div>
+            </li>
+
+            <li>
+              <span class="cb-pers-numero" aria-hidden="true">2</span>
+              <div>
+                <h3>Recibe la cotización</h3>
+                <p>
+                  Te responderemos por WhatsApp con el precio
+                  y el tiempo estimado.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <span class="cb-pers-numero" aria-hidden="true">3</span>
+              <div>
+                <h3>Sandra la elabora</h3>
+                <p>Cada pieza se hace a mano en el taller.</p>
+              </div>
+            </li>
+
+            <li>
+              <span class="cb-pers-numero" aria-hidden="true">4</span>
+              <div>
+                <h3>Te la enviamos</h3>
+                <p>Por Correos de Costa Rica a todo el país.</p>
+              </div>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section
+          class="cb-pers-formulario"
+          aria-labelledby="pers-form-titulo"
+        >
+
+          <h2 id="pers-form-titulo">Cuéntanos tu idea</h2>
+
+          <form id="form-personalizados">
+
+            <div class="cb-pers-campo">
+              <label for="pers-categoria">Categoría</label>
+
+              <select
+                id="pers-categoria"
+                name="categoria"
+                required
+              >
+                <option value="Aves">Aves</option>
+                <option value="Insectos">Insectos</option>
+                <option value="Flores y frutas">Flores y frutas</option>
+                <option value="Mascotas">Mascotas</option>
+                <option value="Corazones">Corazones</option>
+                <option value="Otra">Otra</option>
+              </select>
+            </div>
+
+            <div class="cb-pers-campo">
+              <label for="pers-colores">Colores</label>
+
+              <input
+                type="text"
+                id="pers-colores"
+                name="colores"
+                placeholder="Ej. turquesa, ámbar y verde"
+              >
+            </div>
+
+            <div class="cb-pers-form-row">
+
+              <div class="cb-pers-campo">
+                <label for="pers-medidas">Medidas aproximadas</label>
+
+                <input
+                  type="text"
+                  id="pers-medidas"
+                  name="medidas"
+                  placeholder="30 × 40 cm"
+                >
+              </div>
+
+              <div class="cb-pers-campo">
+                <label for="pers-fecha">Fecha deseada</label>
+
+                <input
+                  type="date"
+                  id="pers-fecha"
+                  name="fecha"
+                >
+              </div>
+
+            </div>
+
+            <div class="cb-pers-campo">
+              <label for="pers-ocasion">Ocasión</label>
+
+              <select id="pers-ocasion" name="ocasion">
+                <option value="">Regalo, hogar, aniversario...</option>
+                <option value="Decoración del hogar">Decoración del hogar</option>
+                <option value="Regalo">Regalo</option>
+                <option value="Aniversario">Aniversario</option>
+                <option value="Cumpleaños">Cumpleaños</option>
+                <option value="Otra ocasión">Otra ocasión</option>
+              </select>
+            </div>
+
+            <div class="cb-pers-campo">
+              <label for="pers-comentarios">Comentarios</label>
+
+              <textarea
+                id="pers-comentarios"
+                name="comentarios"
+                rows="4"
+                placeholder="Cuéntanos más detalles de tu idea"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="cb-pers-enviar"
+            >
+              <i
+                class="bi bi-whatsapp"
+                aria-hidden="true"
+              ></i>
+              Enviar consulta por WhatsApp
+            </button>
+
+          </form>
+
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <dialog
+    id="cb-pers-lightbox"
+    class="cb-pers-lightbox"
+    aria-label="Fotografía ampliada de un vitral personalizado"
+  >
+
+    <button
+      type="button"
+      class="cb-pers-lightbox-cerrar"
+      aria-label="Cerrar fotografía"
+    >
+      &times;
+    </button>
+
+    <img
+      id="cb-pers-lightbox-imagen"
+      class="cb-pers-lightbox-imagen"
+      alt=""
+    >
+
+  </dialog>
+
+  <div id="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/personalizados.js"></script>
+</body>
+</html>
