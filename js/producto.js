@@ -361,3 +361,12 @@
   });
 
 })();
+
+/* Trae lo último de la hoja; si algo cambió, vuelve a mostrar la ficha */
+const catalogoAntes = localStorage.getItem('catalogoHoja');
+
+cargarCatalogo().then(() => {
+  if (localStorage.getItem('catalogoHoja') !== catalogoAntes) {
+    location.reload();
+  }
+});
