@@ -74,6 +74,9 @@ function crearTarjeta(pieza) {
 /* ===== Mostrar todas las tarjetas ===== */
 function mostrarPiezas(lista) {
   grid.innerHTML = lista.map(crearTarjeta).join('');
+
+  // Animación de entrada (js/animaciones.js)
+  if (typeof animarTarjetas === 'function') animarTarjetas();
 }
 
 /* =====================================================

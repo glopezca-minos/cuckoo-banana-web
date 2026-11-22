@@ -3,8 +3,8 @@
   max-width: 1320px;
   margin: 0 auto;
   padding: 48px 40px 96px;
-  background-color: var(--crema-claro, #f7f4ee);
-  color: var(--tinta, #1a1a1a);
+  background-color: var(--crema-claro, var(--crema-claro));
+  color: var(--tinta, var(--tinta));
   font-family: "Hanken Grotesk", sans-serif;
 }
 
@@ -19,7 +19,7 @@
   gap: 7px;
   margin: 0 0 24px;
   font-size: 14px;
-  color: #66635c;
+  color: var(--texto-suave);
 }
 
 .cb-pers-breadcrumb a {
@@ -28,12 +28,12 @@
 }
 
 .cb-pers-breadcrumb a:hover {
-  color: var(--arcilla, #99522f);
+  color: var(--arcilla, var(--arcilla));
 }
 
 .cb-pers-breadcrumb [aria-current="page"] {
   font-weight: 600;
-  color: #302e2b;
+  color: var(--texto);
 }
 
 .cb-pers-intro {
@@ -59,7 +59,7 @@
   margin: 0 0 5px;
   font-size: 17px;
   line-height: 1.65;
-  color: #66635c;
+  color: var(--texto-suave);
 }
 
 .cb-pers-galeria {
@@ -80,7 +80,7 @@
   border: 0;
   border-radius: 16px;
   overflow: hidden;
-  background: #eae4d2;
+  background: var(--blanco-calido);
   appearance: none;
   box-sizing: border-box;
   cursor: zoom-in;
@@ -109,7 +109,7 @@
 }
 
 .cb-pers-ejemplo:focus-visible {
-  outline: 3px solid var(--arcilla, #99522f);
+  outline: 3px solid var(--arcilla, var(--arcilla));
   outline-offset: 4px;
 }
 
@@ -176,8 +176,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--arena, #f3d5b8);
-  color: var(--arcilla, #99522f);
+  background-color: var(--arena, var(--arena));
+  color: var(--arcilla, var(--arcilla));
   border-radius: 50%;
   font-family: "Gloock", Georgia, serif;
   font-size: 25px;
@@ -195,7 +195,7 @@
   margin: 0;
   font-size: 15px;
   line-height: 1.6;
-  color: #66635c;
+  color: var(--texto-suave);
 }
 
 .cb-pers-formulario {
@@ -216,7 +216,7 @@
 .cb-pers-campo label {
   display: block;
   margin-bottom: 7px;
-  color: #302e2b;
+  color: var(--texto);
   font-size: 14px;
   font-weight: 500;
 }
@@ -231,7 +231,7 @@
   border: 1px solid #dcd2c0;
   border-radius: 4px;
   background-color: #fffdfa;
-  color: #302e2b;
+  color: var(--texto);
   font-family: "Hanken Grotesk", sans-serif;
   font-size: 15px;
   line-height: 1.5;
@@ -256,7 +256,7 @@
 .cb-pers-campo input:focus,
 .cb-pers-campo select:focus,
 .cb-pers-campo textarea:focus {
-  border-color: var(--arcilla, #99522f);
+  border-color: var(--arcilla, var(--arcilla));
   outline: 2px solid rgba(153, 82, 47, 0.14);
 }
 
@@ -274,9 +274,9 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  border: 1px solid var(--naranja, #f27242);
+  border: 1px solid var(--naranja, var(--naranja));
   border-radius: 4px;
-  background-color: var(--naranja, #f27242);
+  background-color: var(--naranja, var(--naranja));
   color: white;
   font-family: "Hanken Grotesk", sans-serif;
   font-size: 16px;
@@ -293,7 +293,7 @@
 }
 
 .cb-pers-enviar:focus-visible {
-  outline: 3px solid var(--arcilla, #99522f);
+  outline: 3px solid var(--arcilla, var(--arcilla));
   outline-offset: 3px;
 }
 
@@ -479,7 +479,7 @@
   }
 
   .cb-pers-pasos p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .cb-pers-formulario {
@@ -488,13 +488,13 @@
   }
 
   .cb-pers-campo label {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .cb-pers-campo input,
   .cb-pers-campo select,
   .cb-pers-campo textarea {
-    font-size: 13px;
+    font-size: 14px;
     padding: 10px;
   }
 
@@ -503,7 +503,7 @@
   }
 
   .cb-pers-enviar {
-    font-size: 13px;
+    font-size: 14px;
     min-height: 47px;
   }
 

@@ -233,7 +233,7 @@
         </p>
 
         <p class="cb-ficha-relacionado-descripcion">
-          Vidrio de colores hecho a mano. Cada pieza es única.
+          Vidrio de colores hecho a mano. Cada pieza puede variar ligeramente.
         </p>
 
         <span class="cb-ficha-relacionado-estado ${espera ? "espera" : ""}">

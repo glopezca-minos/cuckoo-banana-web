@@ -786,3 +786,16 @@ h1, h2, h3 {
     white-space: nowrap;
   }
 }
+/* =====================================
+   Migas: en celular no se muestran en ninguna página
+   (igual que en los wireframes)
+   ===================================== */
+@media (max-width: 700px) {
+  .cb-migas,
+  .cb-ficha-breadcrumb,
+  .cb-pers-breadcrumb,
+  .cb-talleres-migas,
+  .cb-sobre-migas {
+    display: none !important;
+  }
+}

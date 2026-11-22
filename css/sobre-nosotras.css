@@ -1,8 +1,8 @@
 
 .cb-sobre {
   width: 100%;
-  background: var(--crema-claro, #f7f4ee);
-  color: var(--tinta, #1a1a1a);
+  background: var(--crema-claro, var(--crema-claro));
+  color: var(--tinta, var(--tinta));
   font-family: "Hanken Grotesk", sans-serif;
 }
 
@@ -23,7 +23,7 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 24px;
-  color: #66635c;
+  color: var(--texto-suave);
   font-size: 14px;
 }
 
@@ -33,11 +33,11 @@
 }
 
 .cb-sobre-migas a:hover {
-  color: #99522f;
+  color: var(--arcilla);
 }
 
 .cb-sobre-migas [aria-current="page"] {
-  color: #302e2b;
+  color: var(--texto);
   font-weight: 600;
 }
 
@@ -55,7 +55,7 @@
 
 .cb-sobre-etiqueta {
   margin: 0 0 14px;
-  color: var(--arcilla, #99522f);
+  color: var(--arcilla, var(--arcilla));
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -64,7 +64,7 @@
 .cb-sobre-hero h1 {
   max-width: 540px;
   margin: 0 0 18px;
-  color: #1a1a1a;
+  color: var(--tinta);
   font-family: "Gloock", Georgia, serif;
   font-size: clamp(40px, 5vw, 56px);
   font-weight: 400;
@@ -75,7 +75,7 @@
 .cb-sobre-descripcion {
   max-width: 540px;
   margin: 0;
-  color: #66635c;
+  color: var(--texto-suave);
   font-size: 16px;
   line-height: 1.7;
 }
@@ -114,14 +114,14 @@
 .cb-sobre-historia-card {
   min-width: 0;
   padding: 28px;
-  border: 1px solid var(--borde, #ddd7ca);
+  border: 1px solid var(--borde, var(--borde));
   border-radius: 12px;
   background: #fffdfa;
 }
 
 .cb-sobre-historia-card .cb-sobre-etiqueta {
   margin-bottom: 12px;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .cb-sobre-historia-card h2 {
@@ -134,14 +134,14 @@
 
 .cb-sobre-historia-card > p:last-child {
   margin: 0;
-  color: #66635c;
+  color: var(--texto-suave);
   font-size: 15px;
   line-height: 1.7;
 }
 
 .cb-sobre-equipo {
   padding: 52px 0 58px;
-  background: var(--blanco-calido, #eae4d2);
+  background: var(--blanco-calido, var(--blanco-calido));
 }
 
 .cb-sobre-seccion-titulo {
@@ -203,14 +203,14 @@
 
 .cb-sobre-cargo {
   margin: 0 0 7px;
-  color: var(--arcilla, #99522f);
+  color: var(--arcilla, var(--arcilla));
   font-size: 14px;
   font-weight: 700;
 }
 
 .cb-sobre-persona-descripcion {
   margin: 0;
-  color: #66635c;
+  color: var(--texto-suave);
   font-size: 14px;
   line-height: 1.6;
 }
@@ -241,7 +241,7 @@
   border: 0;
   border-radius: 13px;
   overflow: hidden;
-  background: #eae4d2;
+  background: var(--blanco-calido);
   cursor: zoom-in;
   appearance: none;
   box-sizing: border-box;
@@ -270,14 +270,14 @@
 }
 
 .cb-sobre-foto-boton:focus-visible {
-  outline: 3px solid #99522f;
+  outline: 3px solid var(--arcilla);
   outline-offset: 4px;
 }
 
 .cb-sobre-proceso-item figcaption {
   margin-top: 12px;
   padding: 0 3px;
-  color: #66635c;
+  color: var(--texto-suave);
   font-size: 14px;
   font-weight: 600;
   line-height: 1.45;
@@ -296,9 +296,9 @@
   justify-content: center;
   min-height: 48px;
   padding: 12px 28px;
-  border: 1px solid var(--naranja, #f27242);
+  border: 1px solid var(--naranja, var(--naranja));
   border-radius: 4px;
-  background: var(--naranja, #f27242);
+  background: var(--naranja, var(--naranja));
   color: white;
   font-size: 15px;
   font-weight: 700;
@@ -307,8 +307,8 @@
 }
 
 .cb-sobre-boton:hover {
-  background: var(--terracota, #d2774a);
-  border-color: var(--terracota, #d2774a);
+  background: var(--terracota, var(--terracota));
+  border-color: var(--terracota, var(--terracota));
   color: white;
 }
 
@@ -439,7 +439,7 @@
 
   .cb-sobre-etiqueta {
     margin-bottom: 9px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .cb-sobre-hero h1 {
@@ -448,7 +448,7 @@
   }
 
   .cb-sobre-descripcion {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.65;
   }
 
@@ -467,7 +467,7 @@
   }
 
   .cb-sobre-historia-card > p:last-child {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .cb-sobre-equipo {
@@ -500,7 +500,7 @@
 
   .cb-sobre-cargo,
   .cb-sobre-persona-descripcion {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .cb-sobre-proceso {
@@ -518,7 +518,7 @@
 
   .cb-sobre-proceso-item figcaption {
     margin-top: 9px;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .cb-sobre-accion {

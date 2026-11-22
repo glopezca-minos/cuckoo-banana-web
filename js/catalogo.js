@@ -45,7 +45,7 @@ let catalogo = [
     precio: 28000,
     estado: "disponible",
     medidas: "Por confirmar",
-    descripcion: "Búho de vidrio de colores, elaborado a mano. Cada pieza es única.",
+    descripcion: "Búho de vidrio de colores, elaborado a mano. Cada pieza puede variar ligeramente.",
     imagen: "img/vitral-buho.jpeg",
     alt: "Vitral artesanal de búho"
   },
@@ -69,7 +69,7 @@ let catalogo = [
     precio: 28000,
     estado: "reservada",
     medidas: "Por confirmar",
-    descripcion: "Vidrio de colores hecho a mano. Cada pieza es única.",
+    descripcion: "Vidrio de colores hecho a mano. Cada pieza puede variar ligeramente.",
     imagen: "",
     alt: ""
   },
@@ -80,7 +80,7 @@ let catalogo = [
     precio: 15000,
     estado: "vendida",
     medidas: "Por confirmar",
-    descripcion: "Vidrio de colores hecho a mano. Cada pieza es única.",
+    descripcion: "Vidrio de colores hecho a mano. Cada pieza puede variar ligeramente.",
     imagen: "",
     alt: ""
   },
@@ -91,7 +91,7 @@ let catalogo = [
     precio: 12000,
     estado: "disponible",
     medidas: "Por confirmar",
-    descripcion: "Vidrio de colores hecho a mano. Cada pieza es única.",
+    descripcion: "Vidrio de colores hecho a mano. Cada pieza puede variar ligeramente.",
     imagen: "",
     alt: ""
   },
@@ -102,7 +102,7 @@ let catalogo = [
     precio: 20000,
     estado: "lista-espera",
     medidas: "Por confirmar",
-    descripcion: "Vidrio de colores hecho a mano. Cada pieza es única.",
+    descripcion: "Vidrio de colores hecho a mano. Cada pieza puede variar ligeramente.",
     imagen: "",
     alt: ""
   },
@@ -113,7 +113,7 @@ let catalogo = [
     precio: 10000,
     estado: "disponible",
     medidas: "Por confirmar",
-    descripcion: "Vidrio de colores hecho a mano. Cada pieza es única.",
+    descripcion: "Vidrio de colores hecho a mano. Cada pieza puede variar ligeramente.",
     imagen: "",
     alt: ""
   }
@@ -163,17 +163,36 @@ function calcularEstado(fila) {
   return 'lista-espera';
 }
 
+// "Pinturas en madera" → "pinturas-en-madera" (acepta el nombre bonito o el corto)
+function convertirCategoria(valor) {
+  const texto = String(valor).trim().toLowerCase();
+  const clave = Object.keys(nombresCategoria).find(
+    c => c === texto || nombresCategoria[c].toLowerCase() === texto
+  );
+  return clave || texto;
+}
+
+// Enlace de Google Drive → dirección de imagen que el sitio puede mostrar
+function convertirImagen(valor) {
+  const texto = String(valor || '').trim();
+  const encontrado = texto.match(/\/d\/([\w-]+)/) || texto.match(/[?&]id=([\w-]+)/);
+  if (encontrado) {
+    return `https://drive.google.com/thumbnail?id=${encontrado[1]}&sz=w1200`;
+  }
+  return texto;   // "img/vitral-lapa.jpg" u otra dirección: se usa tal cual
+}
+
 function limpiarPieza(fila) {
   return {
     id: String(fila.id).trim(),
     nombre: fila.nombre,
-    categoria: String(fila.categoria).trim().toLowerCase(),
+    categoria: convertirCategoria(fila.categoria),
     precio: Number(fila.precio),
     estado: calcularEstado(fila),
     stock: Number(fila.stock) || 0,
     medidas: fila.medidas,
     descripcion: fila.descripcion,
-    imagen: fila.imagen,
+    imagen: convertirImagen(fila.imagen),
     alt: fila.alt
   };
 }
@@ -183,7 +202,7 @@ function cargarCatalogo() {
   return fetch(URL_CATALOGO)
     .then(respuesta => respuesta.json())
     .then(datos => {
-      catalogo = datos.map(limpiarPieza);
+      catalogo = datos.map(limpiarPieza).filter(pieza => pieza.id);   // ignora filas sin id
       localStorage.setItem('catalogoHoja', JSON.stringify(catalogo));
     })
     .catch(() => {
