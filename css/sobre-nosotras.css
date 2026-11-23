@@ -568,3 +568,178 @@
 .cb-sobre-proceso-item:nth-child(3) .cb-sobre-foto-boton img {
   object-position: center top;
 }
+
+
+/* =====================================================
+   ASÍ NACE CADA PIEZA
+   En escritorio la sección se queda fija y los pasos pasan de lado
+   (animación en js/sobre-nosotras.js)
+   ===================================================== */
+.cb-sn {
+  overflow-x: clip;
+}
+
+.cb-sn-titulo-seccion {
+  font-size: clamp(40px, 6vw, 84px);
+  line-height: 1;
+}
+
+.cb-sn-proceso {
+  background-color: var(--arcilla);
+  color: var(--crema-claro);
+  padding: 96px 0;
+  overflow: hidden;
+}
+
+.cb-sn-proceso-encabezado {
+  padding: 0 6%;
+  margin-bottom: 48px;
+}
+
+.cb-sn-proceso .cb-sn-titulo-seccion {
+  color: var(--crema-claro);
+  margin-bottom: 24px;
+}
+
+/* Barra de avance (se llena mientras se recorre el proceso) */
+.cb-sn-proceso-barra {
+  height: 3px;
+  max-width: 420px;
+  background-color: rgba(247, 244, 238, 0.25);
+}
+
+.cb-sn-proceso-barra span {
+  display: block;
+  height: 100%;
+  background-color: var(--arena);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+/* Los 4 pasos, uno al lado del otro */
+.cb-sn-proceso-pista {
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  padding: 0 6%;
+}
+
+.cb-sn-paso {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  width: min(78vw, 1000px);
+}
+
+.cb-sn-paso-foto {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  aspect-ratio: 4 / 5;
+  max-height: 62vh;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: zoom-in;
+}
+
+.cb-sn-paso-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.cb-sn-paso-foto:hover img {
+  transform: scale(1.05);
+}
+
+.cb-sn-paso-numero {
+  display: block;
+  font-family: "Gloock", serif;
+  font-size: clamp(90px, 11vw, 170px);
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--arena);
+  margin-bottom: 12px;
+}
+
+.cb-sn-paso h3 {
+  font-size: clamp(32px, 3.5vw, 52px);
+  color: var(--crema-claro);
+  margin-bottom: 14px;
+}
+
+.cb-sn-paso p {
+  max-width: 380px;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+
+.cb-sn-proceso-final {
+  padding: 56px 16px 96px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .cb-sn-proceso {
+    padding: 72px 0;
+  }
+
+  .cb-sn-proceso-encabezado {
+    padding: 0 16px;
+    margin-bottom: 32px;
+  }
+
+  .cb-sn-proceso-barra {
+    display: none;
+  }
+
+  .cb-sn-proceso-pista {
+    flex-direction: column;
+    width: auto;
+    gap: 56px;
+    padding: 0 16px;
+  }
+
+  .cb-sn-paso {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: auto;
+  }
+
+  .cb-sn-paso-foto {
+    max-height: none;
+  }
+
+  .cb-sn-paso-numero {
+    font-size: 88px;
+  }
+
+  .cb-sn-paso p {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-sn-proceso-barra span { transform: none; }
+}
+
+/* Botón de WhatsApp: mientras está sobre la sección arcilla, se vuelve claro
+   (la clase la pone js/sobre-nosotras.js) */
+.cb-whatsapp {
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.2s ease;
+}
+
+.cb-whatsapp.cb-whatsapp-claro {
+  background-color: var(--crema-claro);
+  color: var(--arcilla);
+}
+
+.cb-whatsapp.cb-whatsapp-claro:hover {
+  background-color: var(--arena);
+  color: var(--arcilla);
+}

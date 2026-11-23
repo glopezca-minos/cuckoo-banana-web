@@ -158,7 +158,6 @@ function activarCarretes() {
 
     tarjeta.addEventListener('mouseenter', () => {
       if (fotos().length < 2 || sinMovimientoGSAP) return;
-      mostrar((actual + 1) % fotos().length);      // cambia de una vez, sin esperar
       reloj = setInterval(() => mostrar((actual + 1) % fotos().length), TIEMPO_POR_FOTO);
     });
 

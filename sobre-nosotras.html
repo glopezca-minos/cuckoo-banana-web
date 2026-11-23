@@ -19,7 +19,7 @@
 <body>
   <div id="header"></div>
 
-  <main class="cb-main cb-sobre">
+  <main class="cb-main cb-sobre cb-sn">
 
     <section class="cb-sobre-introduccion">
       <div class="cb-sobre-wrap">
@@ -138,88 +138,60 @@
       </div>
     </section>
 
-    <section class="cb-sobre-proceso" aria-labelledby="titulo-proceso">
-      <div class="cb-sobre-wrap">
+<!-- ===== 5. PROCESO: en escritorio se recorre de lado al bajar ===== -->
+    <section class="cb-sn-proceso" aria-labelledby="cb-sn-proceso-titulo">
+      <div class="cb-sn-proceso-encabezado">
+        <h2 class="cb-sn-titulo-seccion" id="cb-sn-proceso-titulo">Así nace cada pieza</h2>
+        <div class="cb-sn-proceso-barra" aria-hidden="true"><span></span></div>
+      </div>
 
-        <h2 class="cb-sobre-seccion-titulo" id="titulo-proceso">
-          Así nace cada pieza
-        </h2>
-
-        <div class="cb-sobre-proceso-grid">
-
-          <figure class="cb-sobre-proceso-item">
-            <button
-              type="button"
-              class="cb-sobre-foto-boton"
-              aria-label="Ampliar fotografía del diseño del patrón"
-            >
-              <img
-                src="img/dibujo-patron.jpg"
-                alt="Dibujo a lápiz del patrón de un vitral"
-                loading="lazy"
-              >
+      <div class="cb-sn-proceso-pista">
+          <article class="cb-sn-paso">
+            <button type="button" class="cb-sobre-foto-boton cb-sn-paso-foto" aria-label="Ampliar fotografía: Diseño del patrón">
+              <img src="img/dibujo-patron.jpg" alt="Dibujo a lápiz del patrón de un vitral" loading="lazy">
             </button>
-            <figcaption>Diseño del patrón</figcaption>
-          </figure>
-
-          <figure class="cb-sobre-proceso-item">
-            <button
-              type="button"
-              class="cb-sobre-foto-boton"
-              aria-label="Ampliar fotografía del corte del vidrio"
-            >
-              <img
-                src="img/corte-vidrio.jpg"
-                alt="Piezas de vidrio de colores para elaborar un vitral"
-                loading="lazy"
-              >
+            <div class="cb-sn-paso-texto">
+              <span class="cb-sn-paso-numero" aria-hidden="true">01</span>
+              <h3>Diseño del patrón</h3>
+              <p>Sandra dibuja la pieza a mano, línea por línea, antes de tocar el vidrio.</p>
+            </div>
+          </article>
+          <article class="cb-sn-paso">
+            <button type="button" class="cb-sobre-foto-boton cb-sn-paso-foto" aria-label="Ampliar fotografía: Corte del vidrio">
+              <img src="img/corte-vidrio.jpg" alt="Piezas de vidrio de colores para elaborar un vitral" loading="lazy">
             </button>
-            <figcaption>Corte del vidrio</figcaption>
-          </figure>
-
-          <figure class="cb-sobre-proceso-item">
-            <button
-              type="button"
-              class="cb-sobre-foto-boton"
-              aria-label="Ampliar fotografía del armado del vitral"
-            >
-              
-<img
-  src="img/armado-vitral.jpg"
-  alt="Proceso de armado artesanal de un vitral"
-  loading="lazy"
->
-
-              >
+            <div class="cb-sn-paso-texto">
+              <span class="cb-sn-paso-numero" aria-hidden="true">02</span>
+              <h3>Corte del vidrio</h3>
+              <p>Se eligen los colores y se corta cada fragmento siguiendo el patrón.</p>
+            </div>
+          </article>
+          <article class="cb-sn-paso">
+            <button type="button" class="cb-sobre-foto-boton cb-sn-paso-foto" aria-label="Ampliar fotografía: Armado">
+              <img src="img/armado-vitral.jpg" alt="Proceso de armado artesanal de un vitral" loading="lazy">
             </button>
-            <figcaption>Armado del vitral</figcaption>
-          </figure>
-
-          <figure class="cb-sobre-proceso-item">
-            <button
-              type="button"
-              class="cb-sobre-foto-boton"
-              aria-label="Ampliar fotografía de la pieza terminada"
-            >
-              <img
-                src="img/pieza-terminada.jpg"
-                alt="Vitral artesanal de un gallo terminado"
-                loading="lazy"
-              >
+            <div class="cb-sn-paso-texto">
+              <span class="cb-sn-paso-numero" aria-hidden="true">03</span>
+              <h3>Armado</h3>
+              <p>Los fragmentos se unen uno a uno, como un rompecabezas de luz.</p>
+            </div>
+          </article>
+          <article class="cb-sn-paso">
+            <button type="button" class="cb-sobre-foto-boton cb-sn-paso-foto" aria-label="Ampliar fotografía: Pieza terminada">
+              <img src="img/pieza-terminada.jpg" alt="Vitral artesanal de un gallo terminado" loading="lazy">
             </button>
-            <figcaption>Pieza terminada</figcaption>
-          </figure>
-
-        </div>
-
-        <div class="cb-sobre-accion">
-          <a class="cb-sobre-boton" href="tienda.html">
-            Ver la tienda
-          </a>
-        </div>
-
+            <div class="cb-sn-paso-texto">
+              <span class="cb-sn-paso-numero" aria-hidden="true">04</span>
+              <h3>Pieza terminada</h3>
+              <p>Se revisa cada detalle y queda lista para llenar de color una ventana.</p>
+            </div>
+          </article>
       </div>
     </section>
+
+    <div class="cb-sn-proceso-final">
+      <a class="cb-sobre-boton" href="tienda.html">Ver la tienda</a>
+    </div>
 
   </main>
 

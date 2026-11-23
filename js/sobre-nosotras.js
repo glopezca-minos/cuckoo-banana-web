@@ -50,3 +50,72 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+
+/* =====================================================
+   ASÍ NACE CADA PIEZA (GSAP)
+   Escritorio: la sección se queda fija y los pasos pasan de lado al bajar
+   Celular: cada paso sube al aparecer
+   ===================================================== */
+if (typeof gsap !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const animaciones = gsap.matchMedia();
+
+  /* ----- 5. Proceso en ESCRITORIO: se queda fijo y los pasos pasan de lado ----- */
+  animaciones.add('(min-width: 801px) and (prefers-reduced-motion: no-preference)', () => {
+    const seccion = document.querySelector('.cb-sn-proceso');
+    const pista = document.querySelector('.cb-sn-proceso-pista');
+    const recorrido = () => pista.scrollWidth - window.innerWidth;   // cuánto hay que mover
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: seccion,
+        start: 'top top',
+        end: () => '+=' + recorrido(),
+        pin: true,              // la sección se queda quieta mientras se recorre
+        scrub: 1,
+        invalidateOnRefresh: true
+      }
+    })
+      .to(pista, { x: () => -recorrido(), ease: 'none' }, 0)
+      .to('.cb-sn-proceso-barra span', { scaleX: 1, ease: 'none' }, 0);
+  });
+
+
+  /* ----- 5. Proceso en CELULAR: cada paso sube al aparecer ----- */
+  animaciones.add('(max-width: 800px) and (prefers-reduced-motion: no-preference)', () => {
+    document.querySelectorAll('.cb-sn-paso').forEach(paso => {
+      gsap.from(paso, {
+        y: 60,
+        autoAlpha: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: paso, start: 'top 85%' }
+      });
+    });
+  });
+
+  // Cuando cargan todas las fotos, se recalculan las posiciones
+  window.addEventListener('load', () => ScrollTrigger.refresh());
+}
+
+
+/* El botón de WhatsApp se vuelve claro mientras está encima de la sección arcilla
+   (compara la posición del botón con la de la sección cada vez que se baja) */
+function revisarBotonWhatsapp() {
+  const boton = document.querySelector('.cb-whatsapp');
+  const seccion = document.querySelector('.cb-sn-proceso');
+  if (!boton || !seccion) return;
+
+  const b = boton.getBoundingClientRect();
+  const s = seccion.getBoundingClientRect();
+  const centroBoton = b.top + b.height / 2;
+
+  boton.classList.toggle('cb-whatsapp-claro', centroBoton > s.top && centroBoton < s.bottom);
+}
+
+window.addEventListener('scroll', revisarBotonWhatsapp, { passive: true });
+window.addEventListener('resize', revisarBotonWhatsapp);
+revisarBotonWhatsapp();
