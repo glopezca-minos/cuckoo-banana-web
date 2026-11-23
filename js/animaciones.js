@@ -83,5 +83,60 @@ function animarHero() {
 }
 
 
+/* ===== 3. Parallax: la foto se mueve más lento que la página ===== */
+function animarParallax() {
+  if (!hayGSAP || sinMovimientoGSAP) return;
+
+  document.querySelectorAll('[data-parallax]').forEach(foto => {
+    gsap.set(foto, { scale: 1.18 });   // más grande que su marco, para tener espacio al moverse
+    gsap.fromTo(foto,
+      { yPercent: -8 },
+      {
+        yPercent: 8,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: foto.parentElement,
+          start: 'top bottom',   // empieza cuando el marco asoma abajo
+          end: 'bottom top',     // termina cuando sale por arriba
+          scrub: true            // va pegado al scroll
+        }
+      }
+    );
+  });
+}
+
+
+/* ===== 4. Sobre nosotras: la línea del proceso se dibuja al bajar ===== */
+function animarProceso() {
+  const grid = document.querySelector('.cb-sobre-proceso-grid');
+  if (!hayGSAP || sinMovimientoGSAP || !grid) return;
+
+  const linea = grid.querySelector('.cb-sobre-proceso-linea span');
+  const pasos = [...grid.querySelectorAll('.cb-sobre-paso')];
+
+  // Cada número se enciende cuando la línea llega a su posición (0, 1/3, 2/3 y 1)
+  const encender = (progreso) => {
+    pasos.forEach((paso, i) => {
+      const posicion = i / (pasos.length - 1);
+      paso.classList.toggle('cb-activo', progreso >= posicion - 0.02);
+    });
+  };
+
+  gsap.to(linea, {
+    scaleX: 1,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: grid,
+      start: 'top 75%',
+      end: 'bottom 70%',
+      scrub: 0.6,
+      onUpdate: (st) => encender(st.progress)
+    }
+  });
+}
+
+
 animarHero();
 animarTarjetas();
+animarParallax();
+animarProceso();

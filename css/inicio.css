@@ -1078,3 +1078,120 @@
     margin-bottom: 40px;
   }
 }
+
+/* =====================================================
+   FOTOS REALES en Talleres y Sobre nosotras (con parallax)
+   ===================================================== */
+.cb-home-feature-image {
+  position: relative;
+}
+
+.cb-home-feature-foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* =====================================================
+   CINTA DE FOTOS: se desliza sola de derecha a izquierda
+   ===================================================== */
+.cb-cinta {
+  padding: 24px 0 88px;
+  overflow: hidden;
+}
+
+.cb-cinta-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.cb-cinta-encabezado .cb-home-section-title {
+  margin: 0;
+}
+
+.cb-cinta-ventana {
+  overflow: hidden;
+  /* las orillas se desvanecen */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+/* La pista tiene 2 copias iguales de las fotos: al llegar a la mitad, vuelve a empezar sin que se note */
+.cb-cinta-pista {
+  display: flex;
+  width: max-content;
+  animation: cb-cinta-mover 50s linear infinite;
+}
+
+.cb-cinta-ventana:hover .cb-cinta-pista {
+  animation-play-state: paused;
+}
+
+@keyframes cb-cinta-mover {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.cb-cinta-grupo {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0 16px 0 0;   /* mismo espacio entre la última foto y la primera copia */
+  list-style: none;
+}
+
+.cb-cinta-grupo img {
+  display: block;
+  height: 300px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: transform 0.4s ease;
+}
+
+.cb-cinta-grupo img:hover {
+  transform: scale(1.04) rotate(-1deg);
+}
+
+/* Sin movimiento: la cinta se queda quieta y se puede deslizar con el dedo */
+@media (prefers-reduced-motion: reduce) {
+  .cb-cinta-pista {
+    animation: none;
+  }
+
+  .cb-cinta-ventana {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .cb-cinta {
+    padding: 8px 0 56px;
+  }
+
+  .cb-cinta-encabezado {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .cb-cinta-grupo {
+    gap: 10px;
+    padding-right: 10px;
+  }
+
+  .cb-cinta-grupo img {
+    height: 200px;
+    border-radius: 12px;
+  }
+
+  .cb-cinta-pista {
+    animation-duration: 35s;
+  }
+}
