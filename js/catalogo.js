@@ -177,7 +177,7 @@ function convertirImagen(valor) {
   const texto = String(valor || '').trim();
   const encontrado = texto.match(/\/d\/([\w-]+)/) || texto.match(/[?&]id=([\w-]+)/);
   if (encontrado) {
-    return `https://drive.google.com/thumbnail?id=${encontrado[1]}&sz=w1200`;
+    return `https://lh3.googleusercontent.com/d/${encontrado[1]}=w1200`;
   }
   return texto;   // "img/vitral-lapa.jpg" u otra dirección: se usa tal cual
 }
