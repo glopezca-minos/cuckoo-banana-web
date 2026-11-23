@@ -43,10 +43,10 @@ function crearItem(pieza) {
 
 /* ===== Mostrar el carrito ===== */
 function mostrarCarrito() {
-  // De la lista de id ["colibri", "lapa"], buscamos cada pieza en el catálogo
+  // De la lista de id ["colibri", "lapa"], busca cada pieza en el catálogo
   const piezas = obtenerCarrito()
     .map(id => catalogo.find(pieza => pieza.id === id))
-    .filter(pieza => pieza);              // descarta si alguna ya no existe
+    .filter(pieza => pieza);
 
   // ¿Vacío o con piezas?
   carritoVacio.hidden = piezas.length > 0;
@@ -60,7 +60,7 @@ function mostrarCarrito() {
   const subtotal = piezas.reduce((suma, pieza) => suma + pieza.precio, 0);
   resumenCantidad.textContent = piezas.length === 1 ? 'Subtotal (1 pieza)' : `Subtotal (${piezas.length} piezas)`;
   resumenSubtotal.textContent = formatoPrecio(subtotal);
-  resumenTotal.textContent = formatoPrecio(subtotal);   // el envío se suma en el checkout
+  resumenTotal.textContent = formatoPrecio(subtotal);
   barraTotal.textContent = formatoPrecio(subtotal);
 }
 

@@ -51,12 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
 /* =====================================================
    ASÍ NACE CADA PIEZA (GSAP)
-   Escritorio: la sección se queda fija y los pasos pasan de lado al bajar
-   Celular: cada paso sube al aparecer
    ===================================================== */
 if (typeof gsap !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -67,14 +63,14 @@ if (typeof gsap !== 'undefined') {
   animaciones.add('(min-width: 801px) and (prefers-reduced-motion: no-preference)', () => {
     const seccion = document.querySelector('.cb-sn-proceso');
     const pista = document.querySelector('.cb-sn-proceso-pista');
-    const recorrido = () => pista.scrollWidth - window.innerWidth;   // cuánto hay que mover
+    const recorrido = () => pista.scrollWidth - window.innerWidth;
 
     gsap.timeline({
       scrollTrigger: {
         trigger: seccion,
         start: 'top top',
         end: () => '+=' + recorrido(),
-        pin: true,              // la sección se queda quieta mientras se recorre
+        pin: true,
         scrub: 1,
         invalidateOnRefresh: true
       }
@@ -102,8 +98,7 @@ if (typeof gsap !== 'undefined') {
 }
 
 
-/* El botón de WhatsApp se vuelve claro mientras está encima de la sección arcilla
-   (compara la posición del botón con la de la sección cada vez que se baja) */
+/* El botón de WhatsApp se vuelve claro mientras está encima de la sección arcilla */
 function revisarBotonWhatsapp() {
   const boton = document.querySelector('.cb-whatsapp');
   const seccion = document.querySelector('.cb-sn-proceso');

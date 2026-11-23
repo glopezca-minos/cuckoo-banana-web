@@ -88,7 +88,7 @@ function animarParallax() {
   if (!hayGSAP || sinMovimientoGSAP) return;
 
   document.querySelectorAll('[data-parallax]').forEach(foto => {
-    gsap.set(foto, { scale: 1.18 });   // más grande que su marco, para tener espacio al moverse
+    gsap.set(foto, { scale: 1.18 });
     gsap.fromTo(foto,
       { yPercent: -8 },
       {
@@ -96,9 +96,9 @@ function animarParallax() {
         ease: 'none',
         scrollTrigger: {
           trigger: foto.parentElement,
-          start: 'top bottom',   // empieza cuando el marco asoma abajo
-          end: 'bottom top',     // termina cuando sale por arriba
-          scrub: true            // va pegado al scroll
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
         }
       }
     );
@@ -114,7 +114,7 @@ function animarProceso() {
   const linea = grid.querySelector('.cb-sobre-proceso-linea span');
   const pasos = [...grid.querySelectorAll('.cb-sobre-paso')];
 
-  // Cada número se enciende cuando la línea llega a su posición (0, 1/3, 2/3 y 1)
+  // Cada número se enciende cuando la línea llega a su posición 
   const encender = (progreso) => {
     pasos.forEach((paso, i) => {
       const posicion = i / (pasos.length - 1);
@@ -141,7 +141,7 @@ const TIEMPO_POR_FOTO = 1100;   // milisegundos
 
 function activarCarretes() {
   document.querySelectorAll('.cb-tarjeta').forEach(tarjeta => {
-    if (tarjeta.dataset.carrete) return;          // ya está activado
+    if (tarjeta.dataset.carrete) return;
     tarjeta.dataset.carrete = 'si';
 
     let reloj = null;
@@ -163,7 +163,7 @@ function activarCarretes() {
 
     tarjeta.addEventListener('mouseleave', () => {
       clearInterval(reloj);
-      if (fotos().length > 1) mostrar(0);          // vuelve a la foto principal
+      if (fotos().length > 1) mostrar(0);
     });
   });
 }

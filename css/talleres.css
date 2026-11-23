@@ -93,8 +93,7 @@
    FOTOGRAFÍAS INTERACTIVAS
    ========================================== */
 
-/* Los botones contienen las imágenes.
-   Así el zoom no altera el tamaño del grid. */
+/* Los botones contienen las imágenes */
 
 .cb-talleres-foto-boton {
   position: relative;
@@ -361,9 +360,6 @@
 /* ==========================================
    VISOR DE IMÁGENES A TAMAÑO COMPLETO
    ========================================== */
-
-/* El dialog cubre la ventana sin
-   modificar el diseño de la página. */
 
 .cb-talleres-lightbox {
   position: fixed;

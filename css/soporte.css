@@ -130,7 +130,7 @@
   font-weight: 600;
   color: var(--texto);
   cursor: pointer;
-  list-style: none;          /* quita el triángulo por defecto */
+  list-style: none;
 }
 
 .cb-pregunta summary::-webkit-details-marker { display: none; }
@@ -207,7 +207,7 @@
     padding: 20px 16px 64px;
   }
 
-  .cb-ayuda .cb-migas { display: none; }   /* el wireframe mobile no las tiene */
+  .cb-ayuda .cb-migas { display: none; }
 
   .cb-ayuda-encabezado { margin-bottom: 16px; }
   .cb-ayuda-encabezado h1 { font-size: 36px; }

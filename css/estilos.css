@@ -787,8 +787,7 @@ h1, h2, h3 {
   }
 }
 /* =====================================
-   Migas: en celular no se muestran en ninguna página
-   (igual que en los wireframes)
+   Migas: en celular no se muestran
    ===================================== */
 @media (max-width: 700px) {
   .cb-migas,
@@ -802,8 +801,6 @@ h1, h2, h3 {
 
 /* =====================================
    Tarjetas: toda la tarjeta abre la ficha
-   El enlace está en el nombre y "se estira" (::after)
-   para cubrir toda la tarjeta. Los botones quedan encima.
    ===================================== */
 .cb-tarjeta {
   position: relative;
@@ -846,7 +843,6 @@ h1, h2, h3 {
 
 /* =====================================
    Carrete de fotos en la tarjeta
-   Las fotos van una encima de otra; solo se ve la "activa".
    ===================================== */
 .cb-tarjeta-foto {
   position: relative;

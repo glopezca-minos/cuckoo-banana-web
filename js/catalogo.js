@@ -227,7 +227,7 @@ function limpiarPieza(fila) {
 }
 
 // 3. Pedir la versión más nueva a la hoja y guardarla
-// Si un id está repetido, se queda solo la primera fila (y avisa en la consola)
+// Si un id está repetido, se queda solo la primera fila (y avisa)
 function quitarRepetidos(piezas) {
   const vistos = new Set();
 
@@ -246,7 +246,7 @@ function cargarCatalogo() {
     .then(respuesta => respuesta.json())
     .then(datos => {
       catalogo = quitarRepetidos(
-        datos.map(limpiarPieza).filter(pieza => pieza.id)   // ignora filas sin id
+        datos.map(limpiarPieza).filter(pieza => pieza.id)
       );
       localStorage.setItem('catalogoHoja', JSON.stringify(catalogo));
     })

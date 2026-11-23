@@ -45,7 +45,7 @@ function animarContador() {
   const carrito = document.querySelector('.cb-cart');
   if (!carrito) return;
   carrito.classList.remove('cb-agregado');
-  void carrito.offsetWidth;            // reinicia la animación
+  void carrito.offsetWidth;
   carrito.classList.add('cb-agregado');
 }
 

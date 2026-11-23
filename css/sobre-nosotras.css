@@ -572,8 +572,6 @@
 
 /* =====================================================
    ASÍ NACE CADA PIEZA
-   En escritorio la sección se queda fija y los pasos pasan de lado
-   (animación en js/sobre-nosotras.js)
    ===================================================== */
 .cb-sn {
   overflow-x: clip;
@@ -728,8 +726,7 @@
   .cb-sn-proceso-barra span { transform: none; }
 }
 
-/* Botón de WhatsApp: mientras está sobre la sección arcilla, se vuelve claro
-   (la clase la pone js/sobre-nosotras.js) */
+/* Botón de WhatsApp: mientras está sobre la sección arcilla, se vuelve claro */
 .cb-whatsapp {
   transition: background-color 0.4s ease, color 0.4s ease, transform 0.2s ease;
 }

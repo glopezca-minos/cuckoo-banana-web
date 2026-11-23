@@ -132,7 +132,7 @@
 /* ===== Resumen ===== */
 
 .cb-resumen {
-  position: sticky;            /* se queda visible al bajar en desktop */
+  position: sticky;
   top: 24px;
   display: flex;
   flex-direction: column;
@@ -219,7 +219,7 @@
 
 @media (max-width: 1000px) {
   .cb-carrito-layout {
-    grid-template-columns: 1fr;   /* el resumen pasa debajo */
+    grid-template-columns: 1fr;
     gap: 32px;
   }
 
@@ -255,13 +255,13 @@
   .cb-resumen-boton { display: none; }
 
   .cb-barra-movil {
-    position: sticky;            /* se queda pegada abajo al hacer scroll */
+    position: sticky;
     bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-    margin: 24px -16px 0;        /* ocupa todo el ancho de la pantalla */
+    margin: 24px -16px 0;
     padding: 12px 16px;
     background-color: #fdfbf7;
     border-top: 1px solid var(--borde);

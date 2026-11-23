@@ -110,7 +110,7 @@ function cargarDatosGuardados() {
   if (!datos) return;
 
   camposRecordables.forEach(campo => {
-    if (campo === 'canton') return;                   // el cantón va después de la provincia
+    if (campo === 'canton') return;
     if (datos[campo]) document.getElementById(campo).value = datos[campo];
   });
   llenarCantones();
@@ -152,12 +152,12 @@ formulario.querySelectorAll('.cb-campo input, .cb-campo select, .cb-campo textar
 
 /* ===== 6. Confirmar pedido ===== */
 function generarCodigo() {
-  const numero = Math.floor(Math.random() * 10000);    // 0 a 9999
-  return 'CB-' + String(numero).padStart(4, '0');       // 42 → "CB-0042"
+  const numero = Math.floor(Math.random() * 10000);
+  return 'CB-' + String(numero).padStart(4, '0');
 }
 
 formulario.addEventListener('submit', evento => {
-  evento.preventDefault();                              // que no recargue la página
+  evento.preventDefault();
 
   // Revisar todos los campos y marcar los que tengan error
   const campos = [...formulario.querySelectorAll('.cb-campo input, .cb-campo select, .cb-campo textarea')];

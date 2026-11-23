@@ -1142,7 +1142,7 @@
   display: flex;
   gap: 16px;
   margin: 0;
-  padding: 0 16px 0 0;   /* mismo espacio entre la última foto y la primera copia */
+  padding: 0 16px 0 0;
   list-style: none;
 }
 

@@ -45,7 +45,7 @@ function crearBoton(pieza) {
 
 /* ===== Una tarjeta ===== */
 function crearTarjeta(pieza) {
-  const foto = fotoTarjeta(pieza);   // catalogo.js
+  const foto = fotoTarjeta(pieza);
 
   return `
     <article class="cb-tarjeta">
@@ -170,7 +170,6 @@ botonCargarMas.addEventListener('click', () => {
   cantidadVisible += PIEZAS_POR_TANDA;
   aplicarFiltros();
 });
-
 
 /* =====================================================
    Paso 9: agregar al carrito

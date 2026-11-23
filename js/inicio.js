@@ -3,7 +3,6 @@
    1. "Disponibles ahora": las piezas salen de catalogo.js (y de la hoja)
    2. Botones "Agregar al carrito"
    3. Carrusel del hero (menos movimiento)
-   Necesita: carrito.js y catalogo.js cargados antes.
    ===================================================== */
 
 const gridInicio = document.querySelector('.cb-home-products-grid');
@@ -17,7 +16,7 @@ function marcarEnCarrito(boton) {
 
 // Arma el HTML de una tarjeta (igual a la que diseñó Eme)
 function crearTarjetaInicio(pieza) {
-  const foto = fotoTarjeta(pieza);   // catalogo.js
+  const foto = fotoTarjeta(pieza);
 
   return `
     <article class="cb-tarjeta">
@@ -69,8 +68,8 @@ function mostrarDisponibles() {
   if (typeof activarCarretes === 'function') activarCarretes();
 }
 
-mostrarDisponibles();                        // con lo que ya tenemos
-cargarCatalogo().then(mostrarDisponibles);   // y se actualiza con la hoja
+mostrarDisponibles();
+cargarCatalogo().then(mostrarDisponibles);
 
 // Si la persona pidió menos movimiento, el carrusel no avanza solo
 const heroCarrusel = document.getElementById('hero-carrusel');

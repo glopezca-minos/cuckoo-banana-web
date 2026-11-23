@@ -86,7 +86,7 @@
   background-color: #fdfbf7;
   color: var(--texto);
   font-family: "Hanken Grotesk", sans-serif;
-  font-size: 16px;            /* 16px evita que el celular haga zoom al escribir */
+  font-size: 16px;
   transition: border-color 0.2s ease;
 }
 
@@ -97,7 +97,7 @@
 .cb-campo textarea:focus {
   outline: none;
   border: 2px solid var(--naranja);
-  padding: 11px 13px;         /* compensa el borde más grueso */
+  padding: 11px 13px;
 }
 
 .cb-campo select:disabled {
@@ -278,7 +278,7 @@
 
   .cb-resumen-pedido {
     position: static;
-    order: -1;                /* en tablet, el resumen va arriba del formulario */
+    order: -1;
   }
 }
 
@@ -293,7 +293,7 @@
 
   .cb-fila-2,
   .cb-fila-3 {
-    grid-template-columns: 1fr;   /* un campo por línea */
+    grid-template-columns: 1fr;
     gap: 0;
   }
 

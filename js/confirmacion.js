@@ -16,7 +16,7 @@ try {
 }
 
 // Si alguien entra a esta página sin haber hecho un pedido, lo mandamos a la tienda.
-// Si sí hay pedido, lo mostramos.
+// Si sí hay pedido, se muestra
 if (!pedido) {
   location.href = 'tienda.html';
 } else {
