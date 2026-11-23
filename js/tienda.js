@@ -47,10 +47,9 @@ function crearBoton(pieza) {
 function crearTarjeta(pieza) {
   // Foto real o recuadro rayado si todavía no hay foto
   const foto = pieza.imagen
-    ? `<img src="${pieza.imagen}" alt="${pieza.alt}" loading="lazy">`
-    onerror="this.outerHTML='<div class=&quot;cb-foto-placeholder&quot;>Foto de la pieza a contraluz</div>'"
+    ? `<img src="${pieza.imagen}" alt="${pieza.alt}" loading="lazy"
+         onerror="this.outerHTML='<div class=&quot;cb-foto-placeholder&quot;>Foto de la pieza a contraluz</div>'">`
     : `<div class="cb-foto-placeholder">Foto de la pieza a contraluz</div>`;
-
   return `
     <article class="cb-tarjeta">
       <a href="producto.html?id=${pieza.id}" class="cb-tarjeta-foto">
