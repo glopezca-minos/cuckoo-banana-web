@@ -132,6 +132,32 @@ const nombresCategoria = {
   'pinturas-en-madera': 'Pinturas en madera'
 };
 
+// Foto de una tarjeta (Tienda e Inicio)
+// - Sin foto: recuadro rayado
+// - 1 foto: la foto (si falla, recuadro rayado)
+// - Varias fotos: todas apiladas + puntitos; al pasar el mouse se van turnando (js/animaciones.js)
+function fotoTarjeta(pieza) {
+  const relleno = '<div class="cb-foto-placeholder">Foto de la pieza a contraluz</div>';
+  const fotos = [pieza.imagen, ...(pieza.fotosExtra || [])].filter(Boolean);
+
+  if (fotos.length === 0) return relleno;
+
+  if (fotos.length === 1) {
+    return `<img src="${fotos[0]}" alt="${pieza.alt || pieza.nombre}" loading="lazy"
+              onerror="this.outerHTML='<div class=&quot;cb-foto-placeholder&quot;>Foto de la pieza a contraluz</div>'">`;
+  }
+
+  const imagenes = fotos.map((foto, i) => `
+        <img src="${foto}" alt="${i === 0 ? (pieza.alt || pieza.nombre) : ''}" loading="lazy"
+             class="cb-carrete-foto${i === 0 ? ' activa' : ''}"
+             onerror="this.parentElement.querySelector('.cb-carrete-puntos span:last-child')?.remove(); this.remove()">`).join('');
+
+  const puntos = fotos.map((_, i) => `<span${i === 0 ? ' class="activa"' : ''}></span>`).join('');
+
+  return `${imagenes}
+        <span class="cb-carrete-puntos" aria-hidden="true">${puntos}</span>`;
+}
+
 // 18000 → "₡18.000"
 function formatoPrecio(numero) {
   return '₡' + numero.toLocaleString('de-DE');
@@ -201,11 +227,27 @@ function limpiarPieza(fila) {
 }
 
 // 3. Pedir la versión más nueva a la hoja y guardarla
+// Si un id está repetido, se queda solo la primera fila (y avisa en la consola)
+function quitarRepetidos(piezas) {
+  const vistos = new Set();
+
+  return piezas.filter(pieza => {
+    if (vistos.has(pieza.id)) {
+      console.warn(`El id "${pieza.id}" está repetido en la hoja; se usa solo la primera fila.`);
+      return false;
+    }
+    vistos.add(pieza.id);
+    return true;
+  });
+}
+
 function cargarCatalogo() {
   return fetch(URL_CATALOGO)
     .then(respuesta => respuesta.json())
     .then(datos => {
-      catalogo = datos.map(limpiarPieza).filter(pieza => pieza.id);   // ignora filas sin id
+      catalogo = quitarRepetidos(
+        datos.map(limpiarPieza).filter(pieza => pieza.id)   // ignora filas sin id
+      );
       localStorage.setItem('catalogoHoja', JSON.stringify(catalogo));
     })
     .catch(() => {

@@ -136,7 +136,42 @@ function animarProceso() {
 }
 
 
+/* ===== 5. Carrete: al pasar el mouse, las fotos de la tarjeta se turnan ===== */
+const TIEMPO_POR_FOTO = 1100;   // milisegundos
+
+function activarCarretes() {
+  document.querySelectorAll('.cb-tarjeta').forEach(tarjeta => {
+    if (tarjeta.dataset.carrete) return;          // ya está activado
+    tarjeta.dataset.carrete = 'si';
+
+    let reloj = null;
+    let actual = 0;
+
+    const fotos = () => [...tarjeta.querySelectorAll('.cb-carrete-foto')];
+    const puntos = () => [...tarjeta.querySelectorAll('.cb-carrete-puntos span')];
+
+    const mostrar = (indice) => {
+      actual = indice;
+      fotos().forEach((foto, i) => foto.classList.toggle('activa', i === indice));
+      puntos().forEach((punto, i) => punto.classList.toggle('activa', i === indice));
+    };
+
+    tarjeta.addEventListener('mouseenter', () => {
+      if (fotos().length < 2 || sinMovimientoGSAP) return;
+      mostrar((actual + 1) % fotos().length);      // cambia de una vez, sin esperar
+      reloj = setInterval(() => mostrar((actual + 1) % fotos().length), TIEMPO_POR_FOTO);
+    });
+
+    tarjeta.addEventListener('mouseleave', () => {
+      clearInterval(reloj);
+      if (fotos().length > 1) mostrar(0);          // vuelve a la foto principal
+    });
+  });
+}
+
+
 animarHero();
 animarTarjetas();
+activarCarretes();
 animarParallax();
 animarProceso();

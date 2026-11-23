@@ -17,17 +17,17 @@ function marcarEnCarrito(boton) {
 
 // Arma el HTML de una tarjeta (igual a la que diseñó Eme)
 function crearTarjetaInicio(pieza) {
-  const foto = pieza.imagen
-    ? `<img src="${pieza.imagen}" alt="${pieza.alt || pieza.nombre}" class="cb-home-photo" loading="lazy">`
-    : `<span class="cb-foto-placeholder">Foto de la pieza a contraluz</span>`;
+  const foto = fotoTarjeta(pieza);   // catalogo.js
 
   return `
     <article class="cb-tarjeta">
-      <a href="producto.html?id=${pieza.id}" class="cb-tarjeta-foto">
+      <a href="producto.html?id=${pieza.id}" class="cb-tarjeta-foto" tabindex="-1" aria-hidden="true">
         ${foto}
       </a>
       <div class="cb-tarjeta-info">
-        <h3 class="cb-tarjeta-nombre">${pieza.nombre}</h3>
+        <h3 class="cb-tarjeta-nombre">
+          <a href="producto.html?id=${pieza.id}" class="cb-tarjeta-enlace">${pieza.nombre}</a>
+        </h3>
         <p class="cb-tarjeta-precio">${formatoPrecio(pieza.precio)}</p>
         <p class="cb-tarjeta-desc">${pieza.descripcion || ''}</p>
         <span class="cb-estado cb-estado-disponible">Disponible</span>
@@ -64,8 +64,9 @@ function mostrarDisponibles() {
     });
   });
 
-  // Animación de entrada (js/animaciones.js)
+  // Animaciones (js/animaciones.js)
   if (typeof animarTarjetas === 'function') animarTarjetas();
+  if (typeof activarCarretes === 'function') activarCarretes();
 }
 
 mostrarDisponibles();                        // con lo que ya tenemos

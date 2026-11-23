@@ -799,3 +799,97 @@ h1, h2, h3 {
     display: none !important;
   }
 }
+
+/* =====================================
+   Tarjetas: toda la tarjeta abre la ficha
+   El enlace está en el nombre y "se estira" (::after)
+   para cubrir toda la tarjeta. Los botones quedan encima.
+   ===================================== */
+.cb-tarjeta {
+  position: relative;
+  cursor: pointer;
+}
+
+.cb-tarjeta-enlace {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cb-tarjeta-enlace::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+/* Los botones quedan por encima del enlace estirado */
+.cb-tarjeta-botones {
+  position: relative;
+  z-index: 2;
+}
+
+.cb-tarjeta:hover .cb-tarjeta-nombre {
+  color: var(--arcilla);
+}
+
+/* Con teclado: se marca toda la tarjeta */
+.cb-tarjeta-enlace:focus-visible {
+  outline: none;
+}
+
+.cb-tarjeta-enlace:focus-visible::after {
+  outline: 2px solid var(--naranja);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+/* =====================================
+   Carrete de fotos en la tarjeta
+   Las fotos van una encima de otra; solo se ve la "activa".
+   ===================================== */
+.cb-tarjeta-foto {
+  position: relative;
+}
+
+.cb-carrete-foto {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.4s ease;
+}
+
+.cb-carrete-foto.activa {
+  opacity: 1;
+}
+
+/* Puntitos: aparecen al pasar el mouse */
+.cb-carrete-puntos {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cb-tarjeta:hover .cb-carrete-puntos {
+  opacity: 1;
+}
+
+.cb-carrete-puntos span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cb-carrete-puntos span.activa {
+  background-color: #fff;
+  transform: scale(1.25);
+}

@@ -45,19 +45,18 @@ function crearBoton(pieza) {
 
 /* ===== Una tarjeta ===== */
 function crearTarjeta(pieza) {
-  // Foto real o recuadro rayado si todavía no hay foto
-  const foto = pieza.imagen
-    ? `<img src="${pieza.imagen}" alt="${pieza.alt}" loading="lazy"
-         onerror="this.outerHTML='<div class=&quot;cb-foto-placeholder&quot;>Foto de la pieza a contraluz</div>'">`
-    : `<div class="cb-foto-placeholder">Foto de la pieza a contraluz</div>`;
+  const foto = fotoTarjeta(pieza);   // catalogo.js
+
   return `
     <article class="cb-tarjeta">
-      <a href="producto.html?id=${pieza.id}" class="cb-tarjeta-foto">
+      <a href="producto.html?id=${pieza.id}" class="cb-tarjeta-foto" tabindex="-1" aria-hidden="true">
         ${foto}
       </a>
 
       <div class="cb-tarjeta-info">
-        <h2 class="cb-tarjeta-nombre">${pieza.nombre}</h2>
+        <h2 class="cb-tarjeta-nombre">
+          <a href="producto.html?id=${pieza.id}" class="cb-tarjeta-enlace">${pieza.nombre}</a>
+        </h2>
         <p class="cb-tarjeta-precio">${formatoPrecio(pieza.precio)}</p>
         <p class="cb-tarjeta-desc">${pieza.descripcion}</p>
         <span class="cb-estado cb-estado-${pieza.estado}">${textoEstado[pieza.estado]}</span>
@@ -75,8 +74,9 @@ function crearTarjeta(pieza) {
 function mostrarPiezas(lista) {
   grid.innerHTML = lista.map(crearTarjeta).join('');
 
-  // Animación de entrada (js/animaciones.js)
+  // Animaciones (js/animaciones.js)
   if (typeof animarTarjetas === 'function') animarTarjetas();
+  if (typeof activarCarretes === 'function') activarCarretes();
 }
 
 /* =====================================================
