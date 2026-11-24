@@ -24,13 +24,24 @@
   <!-- ===== Contenido ===== -->
   <main class="cb-main cb-soporte cb-soporte-404">
     <section class="cb-404">
-      <p class="cb-404-numero" aria-hidden="true">404</p>
-      <h1>Esta página se rompió… como un vidrio</h1>
-      <p>No encontramos lo que buscabas. Quizá el enlace cambió o la página ya no existe.</p>
-      <div class="cb-404-botones">
-        <a href="/index.html" class="cb-btn cb-btn-principal">Ir al inicio</a>
-        <a href="/tienda.html" class="cb-btn cb-btn-borde">Ver la tienda</a>
+
+      <!-- Vitral que se quiebra (lo dibuja js/error404.js) -->
+      <svg class="cb-404-vidrio" aria-hidden="true"></svg>
+
+      <div class="cb-404-contenido">
+        <p class="cb-404-numero">404</p>
+        <h1>Página no encontrada</h1>
+        <p class="cb-404-texto">
+          La página que buscas no existe o cambió de dirección.
+          Puedes volver al inicio o explorar las piezas disponibles en la tienda.
+        </p>
+
+        <div class="cb-404-botones">
+          <a href="/index.html" class="cb-btn cb-btn-principal">Ir al inicio</a>
+          <a href="/tienda.html" class="cb-btn cb-btn-borde">Ver la tienda</a>
+        </div>
       </div>
+
     </section>
   </main>
 
@@ -43,6 +54,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
   <script src="/js/componentes.js"></script>
   <script src="/js/carrito.js"></script>
+  <script src="/js/error404.js"></script>
   <script src="/js/animaciones.js"></script>
 </body>
 </html>
